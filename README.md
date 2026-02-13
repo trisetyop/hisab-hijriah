@@ -25,7 +25,7 @@ Program interaktif untuk melakukan hisab awal bulan Hijriah dengan akurasi tingg
 ## Tutorial Video
 
 Tonton panduan penggunaan lengkap di sini:
-![Tutorial Video](TUTORIAL.mkv)
+https://github.com/user-attachments/assets/4cf8dc6e-562b-4e36-bdc5-97ce7af620e5
 
 ## Struktur File Penting
 
