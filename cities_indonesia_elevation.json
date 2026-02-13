@@ -1,0 +1,261 @@
+[
+  {
+    "name": "Banda Aceh",
+    "lat": 5.5483,
+    "lon": 95.3238,
+    "province": "Aceh",
+    "elevation_m": 10.0
+  },
+  {
+    "name": "Medan",
+    "lat": 3.5952,
+    "lon": 98.6722,
+    "province": "Sumatera Utara",
+    "elevation_m": 23.0
+  },
+  {
+    "name": "Padang",
+    "lat": -0.9471,
+    "lon": 100.4172,
+    "province": "Sumatera Barat",
+    "elevation_m": 57.0
+  },
+  {
+    "name": "Pekanbaru",
+    "lat": 0.5071,
+    "lon": 101.4478,
+    "province": "Riau",
+    "elevation_m": 17.0
+  },
+  {
+    "name": "Jambi",
+    "lat": -1.6101,
+    "lon": 103.6131,
+    "province": "Jambi",
+    "elevation_m": 25.0
+  },
+  {
+    "name": "Palembang",
+    "lat": -2.9761,
+    "lon": 104.7754,
+    "province": "Sumatera Selatan",
+    "elevation_m": 7.0
+  },
+  {
+    "name": "Bengkulu",
+    "lat": -3.8004,
+    "lon": 102.2655,
+    "province": "Bengkulu",
+    "elevation_m": 17.0
+  },
+  {
+    "name": "Bandar Lampung",
+    "lat": -5.4292,
+    "lon": 105.2625,
+    "province": "Lampung",
+    "elevation_m": 92.0
+  },
+  {
+    "name": "Jakarta",
+    "lat": -6.2088,
+    "lon": 106.8456,
+    "province": "DKI Jakarta",
+    "elevation_m": 12.0
+  },
+  {
+    "name": "Bogor",
+    "lat": -6.595,
+    "lon": 106.8166,
+    "province": "Jawa Barat",
+    "elevation_m": 238.0
+  },
+  {
+    "name": "Bandung",
+    "lat": -6.9175,
+    "lon": 107.6191,
+    "province": "Jawa Barat",
+    "elevation_m": 698.0
+  },
+  {
+    "name": "Cirebon",
+    "lat": -6.7063,
+    "lon": 108.5571,
+    "province": "Jawa Barat",
+    "elevation_m": 9.0
+  },
+  {
+    "name": "Semarang",
+    "lat": -6.9667,
+    "lon": 110.4167,
+    "province": "Jawa Tengah",
+    "elevation_m": 6.0
+  },
+  {
+    "name": "Yogyakarta",
+    "lat": -7.7956,
+    "lon": 110.3695,
+    "province": "DI Yogyakarta",
+    "elevation_m": 106.0
+  },
+  {
+    "name": "Surabaya",
+    "lat": -7.2575,
+    "lon": 112.7521,
+    "province": "Jawa Timur",
+    "elevation_m": 6.0
+  },
+  {
+    "name": "Malang",
+    "lat": -7.9797,
+    "lon": 112.6304,
+    "province": "Jawa Timur",
+    "elevation_m": 452.0
+  },
+  {
+    "name": "Serang",
+    "lat": -6.1203,
+    "lon": 106.1502,
+    "province": "Banten",
+    "elevation_m": 29.0
+  },
+  {
+    "name": "Pontianak",
+    "lat": -0.0263,
+    "lon": 109.3425,
+    "province": "Kalimantan Barat",
+    "elevation_m": 7.0
+  },
+  {
+    "name": "Palangkaraya",
+    "lat": -2.2089,
+    "lon": 113.9213,
+    "province": "Kalimantan Tengah",
+    "elevation_m": 16.0
+  },
+  {
+    "name": "Banjarmasin",
+    "lat": -3.3194,
+    "lon": 114.5906,
+    "province": "Kalimantan Selatan",
+    "elevation_m": 7.0
+  },
+  {
+    "name": "Samarinda",
+    "lat": -0.5022,
+    "lon": 117.1536,
+    "province": "Kalimantan Timur",
+    "elevation_m": 5.0
+  },
+  {
+    "name": "Balikpapan",
+    "lat": -1.2379,
+    "lon": 116.8529,
+    "province": "Kalimantan Timur",
+    "elevation_m": 20.0
+  },
+  {
+    "name": "Tarakan",
+    "lat": 3.3,
+    "lon": 117.6333,
+    "province": "Kalimantan Utara",
+    "elevation_m": 49.0
+  },
+  {
+    "name": "Manado",
+    "lat": 1.4748,
+    "lon": 124.8421,
+    "province": "Sulawesi Utara",
+    "elevation_m": 56.0
+  },
+  {
+    "name": "Gorontalo",
+    "lat": 0.5435,
+    "lon": 123.0673,
+    "province": "Gorontalo",
+    "elevation_m": 11.0
+  },
+  {
+    "name": "Palu",
+    "lat": -0.8999,
+    "lon": 119.8707,
+    "province": "Sulawesi Tengah",
+    "elevation_m": 10.0
+  },
+  {
+    "name": "Makassar",
+    "lat": -5.1477,
+    "lon": 119.4327,
+    "province": "Sulawesi Selatan",
+    "elevation_m": 6.0
+  },
+  {
+    "name": "Kendari",
+    "lat": -3.945,
+    "lon": 122.5989,
+    "province": "Sulawesi Tenggara",
+    "elevation_m": 144.0
+  },
+  {
+    "name": "Mamuju",
+    "lat": -2.6741,
+    "lon": 118.8888,
+    "province": "Sulawesi Barat",
+    "elevation_m": 7.0
+  },
+  {
+    "name": "Denpasar",
+    "lat": -8.6705,
+    "lon": 115.2126,
+    "province": "Bali",
+    "elevation_m": 21.0
+  },
+  {
+    "name": "Mataram",
+    "lat": -8.5833,
+    "lon": 116.1167,
+    "province": "Nusa Tenggara Barat",
+    "elevation_m": 24.0
+  },
+  {
+    "name": "Kupang",
+    "lat": -10.1718,
+    "lon": 123.6075,
+    "province": "Nusa Tenggara Timur",
+    "elevation_m": 101.0
+  },
+  {
+    "name": "Ambon",
+    "lat": -3.6954,
+    "lon": 128.1814,
+    "province": "Maluku",
+    "elevation_m": 13.0
+  },
+  {
+    "name": "Ternate",
+    "lat": 0.7893,
+    "lon": 127.3614,
+    "province": "Maluku Utara",
+    "elevation_m": 260.0
+  },
+  {
+    "name": "Jayapura",
+    "lat": -2.592,
+    "lon": 140.6689,
+    "province": "Papua",
+    "elevation_m": 21.0
+  },
+  {
+    "name": "Manokwari",
+    "lat": -0.8614,
+    "lon": 134.064,
+    "province": "Papua Barat",
+    "elevation_m": 27.0
+  },
+  {
+    "name": "Sorong",
+    "lat": -0.8667,
+    "lon": 131.25,
+    "province": "Papua Barat Daya",
+    "elevation_m": 6.0
+  }
+]

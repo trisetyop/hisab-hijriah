@@ -1,0 +1,5142 @@
+[
+  {
+    "id": "1101",
+    "name": "Simeulue",
+    "type": "Kabupaten",
+    "lat": 2.61667,
+    "lon": 96.08333,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 34.0
+  },
+  {
+    "id": "1102",
+    "name": "Aceh Singkil",
+    "type": "Kabupaten",
+    "lat": 2.41667,
+    "lon": 97.91667,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 37.0
+  },
+  {
+    "id": "1103",
+    "name": "Aceh Selatan",
+    "type": "Kabupaten",
+    "lat": 3.16667,
+    "lon": 97.41667,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 132.0
+  },
+  {
+    "id": "1104",
+    "name": "Aceh Tenggara",
+    "type": "Kabupaten",
+    "lat": 3.36667,
+    "lon": 97.7,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 1516.0
+  },
+  {
+    "id": "1105",
+    "name": "Aceh Timur",
+    "type": "Kabupaten",
+    "lat": 4.63333,
+    "lon": 97.63333,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 37.0
+  },
+  {
+    "id": "1106",
+    "name": "Aceh Tengah",
+    "type": "Kabupaten",
+    "lat": 4.51,
+    "lon": 96.855,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 1606.0
+  },
+  {
+    "id": "1107",
+    "name": "Aceh Barat",
+    "type": "Kabupaten",
+    "lat": 4.45,
+    "lon": 96.16667,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 46.0
+  },
+  {
+    "id": "1108",
+    "name": "Aceh Besar",
+    "type": "Kabupaten",
+    "lat": 5.38333,
+    "lon": 95.51667,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 47.0
+  },
+  {
+    "id": "1109",
+    "name": "Pidie",
+    "type": "Kabupaten",
+    "lat": 5.08,
+    "lon": 96.11,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 996.0
+  },
+  {
+    "id": "1110",
+    "name": "Bireuen",
+    "type": "Kabupaten",
+    "lat": 5.08333,
+    "lon": 96.58333,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 365.0
+  },
+  {
+    "id": "1111",
+    "name": "Aceh Utara",
+    "type": "Kabupaten",
+    "lat": 4.97,
+    "lon": 97.14,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 131.0
+  },
+  {
+    "id": "1112",
+    "name": "Aceh Barat Daya",
+    "type": "Kabupaten",
+    "lat": 3.83333,
+    "lon": 96.88333,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 816.0
+  },
+  {
+    "id": "1113",
+    "name": "Gayo Lues",
+    "type": "Kabupaten",
+    "lat": 3.95,
+    "lon": 97.39,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 1191.0
+  },
+  {
+    "id": "1114",
+    "name": "Aceh Tamiang",
+    "type": "Kabupaten",
+    "lat": 4.25,
+    "lon": 97.96667,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 25.0
+  },
+  {
+    "id": "1115",
+    "name": "Nagan Raya",
+    "type": "Kabupaten",
+    "lat": 4.16667,
+    "lon": 96.51667,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 159.0
+  },
+  {
+    "id": "1116",
+    "name": "Aceh Jaya",
+    "type": "Kabupaten",
+    "lat": 4.86,
+    "lon": 95.64,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 718.0
+  },
+  {
+    "id": "1117",
+    "name": "Bener Meriah",
+    "type": "Kabupaten",
+    "lat": 4.73015,
+    "lon": 96.86156,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 1448.0
+  },
+  {
+    "id": "1118",
+    "name": "Pidie Jaya",
+    "type": "Kabupaten",
+    "lat": 5.15,
+    "lon": 96.21667,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 190.0
+  },
+  {
+    "id": "1171",
+    "name": "Banda Aceh",
+    "type": "Kota",
+    "lat": 5.54167,
+    "lon": 95.33333,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 14.0
+  },
+  {
+    "id": "1172",
+    "name": "Sabang",
+    "type": "Kota",
+    "lat": 5.82164,
+    "lon": 95.31086,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 175.0
+  },
+  {
+    "id": "1173",
+    "name": "Langsa",
+    "type": "Kota",
+    "lat": 4.47,
+    "lon": 97.93,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 39.0
+  },
+  {
+    "id": "1174",
+    "name": "Lhokseumawe",
+    "type": "Kota",
+    "lat": 5.13333,
+    "lon": 97.06667,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 16.0
+  },
+  {
+    "id": "1175",
+    "name": "Subulussalam",
+    "type": "Kota",
+    "lat": 2.75,
+    "lon": 97.93333,
+    "province": "Aceh",
+    "province_id": "11",
+    "elevation_m": 34.0
+  },
+  {
+    "id": "1201",
+    "name": "Nias",
+    "type": "Kabupaten",
+    "lat": 1.03333,
+    "lon": 97.76667,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 32.0
+  },
+  {
+    "id": "1202",
+    "name": "Mandailing Natal",
+    "type": "Kabupaten",
+    "lat": 0.78378,
+    "lon": 99.25495,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 1365.0
+  },
+  {
+    "id": "1203",
+    "name": "Tapanuli Selatan",
+    "type": "Kabupaten",
+    "lat": 1.51667,
+    "lon": 99.25,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 1142.0
+  },
+  {
+    "id": "1204",
+    "name": "Tapanuli Tengah",
+    "type": "Kabupaten",
+    "lat": 1.9,
+    "lon": 98.66667,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 157.0
+  },
+  {
+    "id": "1205",
+    "name": "Tapanuli Utara",
+    "type": "Kabupaten",
+    "lat": 2.0028,
+    "lon": 99.0707,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 1268.0
+  },
+  {
+    "id": "1206",
+    "name": "Toba Samosir",
+    "type": "Kabupaten",
+    "lat": 2.39793,
+    "lon": 99.21678,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 935.0
+  },
+  {
+    "id": "1207",
+    "name": "Labuhan Batu",
+    "type": "Kabupaten",
+    "lat": 2.26667,
+    "lon": 100.1,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 8.0
+  },
+  {
+    "id": "1208",
+    "name": "Asahan",
+    "type": "Kabupaten",
+    "lat": 2.78333,
+    "lon": 99.55,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 33.0
+  },
+  {
+    "id": "1209",
+    "name": "Simalungun",
+    "type": "Kabupaten",
+    "lat": 2.9,
+    "lon": 99,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 585.0
+  },
+  {
+    "id": "1210",
+    "name": "Dairi",
+    "type": "Kabupaten",
+    "lat": 2.86667,
+    "lon": 98.23333,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 496.0
+  },
+  {
+    "id": "1211",
+    "name": "Karo",
+    "type": "Kabupaten",
+    "lat": 3.11667,
+    "lon": 98.3,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 697.0
+  },
+  {
+    "id": "1212",
+    "name": "Deli Serdang",
+    "type": "Kabupaten",
+    "lat": 3.41667,
+    "lon": 98.66667,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 137.0
+  },
+  {
+    "id": "1213",
+    "name": "Langkat",
+    "type": "Kabupaten",
+    "lat": 3.71667,
+    "lon": 98.21667,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 38.0
+  },
+  {
+    "id": "1214",
+    "name": "Nias Selatan",
+    "type": "Kabupaten",
+    "lat": 0.77,
+    "lon": 97.75,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 228.0
+  },
+  {
+    "id": "1215",
+    "name": "Humbang Hasundutan",
+    "type": "Kabupaten",
+    "lat": 2.26551,
+    "lon": 98.50376,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 643.0
+  },
+  {
+    "id": "1216",
+    "name": "Pakpak Bharat",
+    "type": "Kabupaten",
+    "lat": 2.56667,
+    "lon": 98.28333,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 1037.0
+  },
+  {
+    "id": "1217",
+    "name": "Samosir",
+    "type": "Kabupaten",
+    "lat": 2.64025,
+    "lon": 98.71525,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 1084.0
+  },
+  {
+    "id": "1218",
+    "name": "Serdang Bedagai",
+    "type": "Kabupaten",
+    "lat": 3.36667,
+    "lon": 99.03333,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 45.0
+  },
+  {
+    "id": "1219",
+    "name": "Batu Bara",
+    "type": "Kabupaten",
+    "lat": 3.16166,
+    "lon": 99.52652,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 5.0
+  },
+  {
+    "id": "1220",
+    "name": "Padang Lawas Utara",
+    "type": "Kabupaten",
+    "lat": 1.46011,
+    "lon": 99.67346,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 69.0
+  },
+  {
+    "id": "1221",
+    "name": "Padang Lawas",
+    "type": "Kabupaten",
+    "lat": 1.44684,
+    "lon": 99.99207,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 65.0
+  },
+  {
+    "id": "1222",
+    "name": "Labuhan Batu Selatan",
+    "type": "Kabupaten",
+    "lat": 1.983,
+    "lon": 100.0976,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 28.0
+  },
+  {
+    "id": "1223",
+    "name": "Labuhan Batu Utara",
+    "type": "Kabupaten",
+    "lat": 2.33349,
+    "lon": 99.63776,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 85.0
+  },
+  {
+    "id": "1224",
+    "name": "Nias Utara",
+    "type": "Kabupaten",
+    "lat": 1.33037,
+    "lon": 97.31964,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 68.0
+  },
+  {
+    "id": "1225",
+    "name": "Nias Barat",
+    "type": "Kabupaten",
+    "lat": 1.05966,
+    "lon": 97.58606,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 271.0
+  },
+  {
+    "id": "1271",
+    "name": "Sibolga",
+    "type": "Kota",
+    "lat": 1.73333,
+    "lon": 98.8,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 43.0
+  },
+  {
+    "id": "1272",
+    "name": "Tanjung Balai",
+    "type": "Kota",
+    "lat": 2.95833,
+    "lon": 99.79167,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 1.0
+  },
+  {
+    "id": "1273",
+    "name": "Pematang Siantar",
+    "type": "Kota",
+    "lat": 2.96667,
+    "lon": 99.05,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 399.0
+  },
+  {
+    "id": "1274",
+    "name": "Tebing Tinggi",
+    "type": "Kota",
+    "lat": 3.325,
+    "lon": 99.14167,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 18.0
+  },
+  {
+    "id": "1275",
+    "name": "Medan",
+    "type": "Kota",
+    "lat": 3.65,
+    "lon": 98.66667,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 12.0
+  },
+  {
+    "id": "1276",
+    "name": "Binjai",
+    "type": "Kota",
+    "lat": 3.8,
+    "lon": 108.23333,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 0.0
+  },
+  {
+    "id": "1277",
+    "name": "Padang Sidempuan",
+    "type": "Kota",
+    "lat": 1.37375,
+    "lon": 99.26843,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 305.0
+  },
+  {
+    "id": "1278",
+    "name": "Gunungsitoli",
+    "type": "Kota",
+    "lat": 1.32731,
+    "lon": 97.55018,
+    "province": "Sumatera Utara",
+    "province_id": "12",
+    "elevation_m": 87.0
+  },
+  {
+    "id": "1301",
+    "name": "Kepulauan Mentawai",
+    "type": "Kabupaten",
+    "lat": 1.98917,
+    "lon": 99.51889,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 783.0
+  },
+  {
+    "id": "1302",
+    "name": "Pesisir Selatan",
+    "type": "Kabupaten",
+    "lat": -1.58333,
+    "lon": 100.85,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 327.0
+  },
+  {
+    "id": "1303",
+    "name": "Solok",
+    "type": "Kabupaten",
+    "lat": -0.96667,
+    "lon": 100.81667,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 1874.0
+  },
+  {
+    "id": "1304",
+    "name": "Sijunjung",
+    "type": "Kabupaten",
+    "lat": -1.1827,
+    "lon": 101.6056,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 122.0
+  },
+  {
+    "id": "1305",
+    "name": "Tanah Datar",
+    "type": "Kabupaten",
+    "lat": -0.4555,
+    "lon": 100.5771,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 511.0
+  },
+  {
+    "id": "1306",
+    "name": "Padang Pariaman",
+    "type": "Kabupaten",
+    "lat": -0.6,
+    "lon": 100.28333,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 57.0
+  },
+  {
+    "id": "1307",
+    "name": "Agam",
+    "type": "Kabupaten",
+    "lat": -0.25,
+    "lon": 100.16667,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 479.0
+  },
+  {
+    "id": "1308",
+    "name": "Lima Puluh Kota",
+    "type": "Kabupaten",
+    "lat": -0.0168,
+    "lon": 100.5872,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 1022.0
+  },
+  {
+    "id": "1309",
+    "name": "Pasaman",
+    "type": "Kabupaten",
+    "lat": 0.42503,
+    "lon": 99.94606,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 1384.0
+  },
+  {
+    "id": "1310",
+    "name": "Solok Selatan",
+    "type": "Kabupaten",
+    "lat": -1.23333,
+    "lon": 101.417,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 270.0
+  },
+  {
+    "id": "1311",
+    "name": "Dharmasraya",
+    "type": "Kabupaten",
+    "lat": -1.05,
+    "lon": 101.367,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 243.0
+  },
+  {
+    "id": "1312",
+    "name": "Pasaman Barat",
+    "type": "Kabupaten",
+    "lat": 0.28152,
+    "lon": 99.51965,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 36.0
+  },
+  {
+    "id": "1371",
+    "name": "Padang",
+    "type": "Kota",
+    "lat": -0.98333,
+    "lon": 100.45,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 394.0
+  },
+  {
+    "id": "1372",
+    "name": "Solok",
+    "type": "Kota",
+    "lat": -0.76667,
+    "lon": 100.61667,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 394.0
+  },
+  {
+    "id": "1373",
+    "name": "Sawah Lunto",
+    "type": "Kota",
+    "lat": -0.6,
+    "lon": 100.75,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 312.0
+  },
+  {
+    "id": "1374",
+    "name": "Padang Panjang",
+    "type": "Kota",
+    "lat": -0.45,
+    "lon": 100.43333,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 914.0
+  },
+  {
+    "id": "1375",
+    "name": "Bukittinggi",
+    "type": "Kota",
+    "lat": -0.275,
+    "lon": 100.375,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 902.0
+  },
+  {
+    "id": "1376",
+    "name": "Payakumbuh",
+    "type": "Kota",
+    "lat": -0.23333,
+    "lon": 100.63333,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 520.0
+  },
+  {
+    "id": "1377",
+    "name": "Pariaman",
+    "type": "Kota",
+    "lat": -0.62682,
+    "lon": 100.12047,
+    "province": "Sumatera Barat",
+    "province_id": "13",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "1401",
+    "name": "Kuantan Singingi",
+    "type": "Kabupaten",
+    "lat": -0.47532,
+    "lon": 101.45857,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 141.0
+  },
+  {
+    "id": "1402",
+    "name": "Indragiri Hulu",
+    "type": "Kabupaten",
+    "lat": -0.55,
+    "lon": 102.31667,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 21.0
+  },
+  {
+    "id": "1403",
+    "name": "Indragiri Hilir",
+    "type": "Kabupaten",
+    "lat": -0.33333,
+    "lon": 103.16667,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "1404",
+    "name": "Pelalawan",
+    "type": "Kabupaten",
+    "lat": 0.20822,
+    "lon": 102.18607,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 27.0
+  },
+  {
+    "id": "1405",
+    "name": "Siak",
+    "type": "Kabupaten",
+    "lat": 0.97453,
+    "lon": 102.01355,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 5.0
+  },
+  {
+    "id": "1406",
+    "name": "Kampar",
+    "type": "Kabupaten",
+    "lat": 0.2344,
+    "lon": 101.2131,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 105.0
+  },
+  {
+    "id": "1407",
+    "name": "Rokan Hulu",
+    "type": "Kabupaten",
+    "lat": 0.88333,
+    "lon": 100.48333,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 188.0
+  },
+  {
+    "id": "1408",
+    "name": "Bengkalis",
+    "type": "Kabupaten",
+    "lat": 0.9838,
+    "lon": 102.5096,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 12.0
+  },
+  {
+    "id": "1409",
+    "name": "Rokan Hilir",
+    "type": "Kabupaten",
+    "lat": 2.16599,
+    "lon": 100.82514,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 2.0
+  },
+  {
+    "id": "1410",
+    "name": "Kepulauan Meranti",
+    "type": "Kabupaten",
+    "lat": 0.97488,
+    "lon": 102.69539,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 12.0
+  },
+  {
+    "id": "1471",
+    "name": "Pekanbaru",
+    "type": "Kota",
+    "lat": 0.53333,
+    "lon": 101.46667,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 4.0
+  },
+  {
+    "id": "1473",
+    "name": "Dumai",
+    "type": "Kota",
+    "lat": 1.61592,
+    "lon": 101.4917,
+    "province": "Riau",
+    "province_id": "14",
+    "elevation_m": 6.0
+  },
+  {
+    "id": "1501",
+    "name": "Kerinci",
+    "type": "Kabupaten",
+    "lat": -2.03333,
+    "lon": 101.53333,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 1543.0
+  },
+  {
+    "id": "1502",
+    "name": "Merangin",
+    "type": "Kabupaten",
+    "lat": -2.06933,
+    "lon": 102.13303,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 123.0
+  },
+  {
+    "id": "1503",
+    "name": "Sarolangun",
+    "type": "Kabupaten",
+    "lat": -2.3,
+    "lon": 102.65,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 46.0
+  },
+  {
+    "id": "1504",
+    "name": "Batang Hari",
+    "type": "Kabupaten",
+    "lat": -1.75,
+    "lon": 103.11667,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 30.0
+  },
+  {
+    "id": "1505",
+    "name": "Muaro Jambi",
+    "type": "Kabupaten",
+    "lat": -1.55214,
+    "lon": 103.82163,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 8.0
+  },
+  {
+    "id": "1506",
+    "name": "Tanjung Jabung Timur",
+    "type": "Kabupaten",
+    "lat": -1.13198,
+    "lon": 103.61755,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 21.0
+  },
+  {
+    "id": "1507",
+    "name": "Tanjung Jabung Barat",
+    "type": "Kabupaten",
+    "lat": -1.1544,
+    "lon": 103.24402,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 46.0
+  },
+  {
+    "id": "1508",
+    "name": "Tebo",
+    "type": "Kabupaten",
+    "lat": -1.45576,
+    "lon": 102.37473,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 51.0
+  },
+  {
+    "id": "1509",
+    "name": "Bungo",
+    "type": "Kabupaten",
+    "lat": -1.50222,
+    "lon": 101.96,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 145.0
+  },
+  {
+    "id": "1571",
+    "name": "Jambi",
+    "type": "Kota",
+    "lat": -1.61667,
+    "lon": 103.65,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 22.0
+  },
+  {
+    "id": "1572",
+    "name": "Sungai Penuh",
+    "type": "Kota",
+    "lat": -2.10896,
+    "lon": 101.32175,
+    "province": "Jambi",
+    "province_id": "15",
+    "elevation_m": 1346.0
+  },
+  {
+    "id": "1601",
+    "name": "Ogan Komering Ulu",
+    "type": "Kabupaten",
+    "lat": -4.13333,
+    "lon": 104.03333,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 105.0
+  },
+  {
+    "id": "1602",
+    "name": "Ogan Komering Ilir",
+    "type": "Kabupaten",
+    "lat": -3.36667,
+    "lon": 105.36667,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 8.0
+  },
+  {
+    "id": "1603",
+    "name": "Muara Enim",
+    "type": "Kabupaten",
+    "lat": -4.2327,
+    "lon": 103.6141,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 1777.0
+  },
+  {
+    "id": "1604",
+    "name": "Lahat",
+    "type": "Kabupaten",
+    "lat": -3.7864,
+    "lon": 103.5428,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 114.0
+  },
+  {
+    "id": "1605",
+    "name": "Musi Rawas",
+    "type": "Kabupaten",
+    "lat": -3.08333,
+    "lon": 103.2,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 43.0
+  },
+  {
+    "id": "1606",
+    "name": "Musi Banyu Asin",
+    "type": "Kabupaten",
+    "lat": -2.41667,
+    "lon": 103.75,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 48.0
+  },
+  {
+    "id": "1607",
+    "name": "Banyu Asin",
+    "type": "Kabupaten",
+    "lat": -2.88333,
+    "lon": 104.38306,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 23.0
+  },
+  {
+    "id": "1608",
+    "name": "Ogan Komering Ulu Selatan",
+    "type": "Kabupaten",
+    "lat": -4.65728,
+    "lon": 104.00659,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 283.0
+  },
+  {
+    "id": "1609",
+    "name": "Ogan Komering Ulu Timur",
+    "type": "Kabupaten",
+    "lat": -3.85679,
+    "lon": 104.75209,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 37.0
+  },
+  {
+    "id": "1610",
+    "name": "Ogan Ilir",
+    "type": "Kabupaten",
+    "lat": -3.43186,
+    "lon": 104.62727,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 22.0
+  },
+  {
+    "id": "1611",
+    "name": "Empat Lawang",
+    "type": "Kabupaten",
+    "lat": 3.22667,
+    "lon": 99.09256,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 45.0
+  },
+  {
+    "id": "1612",
+    "name": "Penukal Abab Lematang Ilir",
+    "type": "Kabupaten",
+    "lat": -3.21342,
+    "lon": 104.08722,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 25.0
+  },
+  {
+    "id": "1613",
+    "name": "Musi Rawas Utara",
+    "type": "Kabupaten",
+    "lat": -2.48533,
+    "lon": 103.29346,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 68.0
+  },
+  {
+    "id": "1671",
+    "name": "Palembang",
+    "type": "Kota",
+    "lat": -3,
+    "lon": 104.71667,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 6.0
+  },
+  {
+    "id": "1672",
+    "name": "Prabumulih",
+    "type": "Kota",
+    "lat": -3.46202,
+    "lon": 104.2229,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 58.0
+  },
+  {
+    "id": "1673",
+    "name": "Pagar Alam",
+    "type": "Kota",
+    "lat": -4.13055,
+    "lon": 103.26822,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 979.0
+  },
+  {
+    "id": "1674",
+    "name": "Lubuk Linggau",
+    "type": "Kota",
+    "lat": -3.29308,
+    "lon": 102.85503,
+    "province": "Sumatera Selatan",
+    "province_id": "16",
+    "elevation_m": 141.0
+  },
+  {
+    "id": "1701",
+    "name": "Bengkulu Selatan",
+    "type": "Kabupaten",
+    "lat": -4.35,
+    "lon": 103.03333,
+    "province": "Bengkulu",
+    "province_id": "17",
+    "elevation_m": 170.0
+  },
+  {
+    "id": "1702",
+    "name": "Rejang Lebong",
+    "type": "Kabupaten",
+    "lat": -3.43333,
+    "lon": 102.71667,
+    "province": "Bengkulu",
+    "province_id": "17",
+    "elevation_m": 537.0
+  },
+  {
+    "id": "1703",
+    "name": "Bengkulu Utara",
+    "type": "Kabupaten",
+    "lat": -3.33333,
+    "lon": 102.05,
+    "province": "Bengkulu",
+    "province_id": "17",
+    "elevation_m": 74.0
+  },
+  {
+    "id": "1704",
+    "name": "Kaur",
+    "type": "Kabupaten",
+    "lat": -4.78179,
+    "lon": 103.36109,
+    "province": "Bengkulu",
+    "province_id": "17",
+    "elevation_m": 49.0
+  },
+  {
+    "id": "1705",
+    "name": "Seluma",
+    "type": "Kabupaten",
+    "lat": -3.96644,
+    "lon": 102.47429,
+    "province": "Bengkulu",
+    "province_id": "17",
+    "elevation_m": 110.0
+  },
+  {
+    "id": "1706",
+    "name": "Mukomuko",
+    "type": "Kabupaten",
+    "lat": -3.07438,
+    "lon": 101.54766,
+    "province": "Bengkulu",
+    "province_id": "17",
+    "elevation_m": 55.0
+  },
+  {
+    "id": "1707",
+    "name": "Lebong",
+    "type": "Kabupaten",
+    "lat": -3.24278,
+    "lon": 102.3349,
+    "province": "Bengkulu",
+    "province_id": "17",
+    "elevation_m": 843.0
+  },
+  {
+    "id": "1708",
+    "name": "Kepahiang",
+    "type": "Kabupaten",
+    "lat": -3.60194,
+    "lon": 102.56424,
+    "province": "Bengkulu",
+    "province_id": "17",
+    "elevation_m": 663.0
+  },
+  {
+    "id": "1709",
+    "name": "Bengkulu Tengah",
+    "type": "Kabupaten",
+    "lat": -3.20679,
+    "lon": 102.12616,
+    "province": "Bengkulu",
+    "province_id": "17",
+    "elevation_m": 643.0
+  },
+  {
+    "id": "1771",
+    "name": "Bengkulu",
+    "type": "Kota",
+    "lat": -3.81667,
+    "lon": 102.31667,
+    "province": "Bengkulu",
+    "province_id": "17",
+    "elevation_m": 41.0
+  },
+  {
+    "id": "1801",
+    "name": "Lampung Barat",
+    "type": "Kabupaten",
+    "lat": -5.14904,
+    "lon": 104.19309,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 855.0
+  },
+  {
+    "id": "1802",
+    "name": "Tanggamus",
+    "type": "Kabupaten",
+    "lat": -5.38508,
+    "lon": 104.62349,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 771.0
+  },
+  {
+    "id": "1803",
+    "name": "Lampung Selatan",
+    "type": "Kabupaten",
+    "lat": -5.4531,
+    "lon": 104.9877,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 102.0
+  },
+  {
+    "id": "1804",
+    "name": "Lampung Timur",
+    "type": "Kabupaten",
+    "lat": -5.10273,
+    "lon": 105.68003,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 28.0
+  },
+  {
+    "id": "1805",
+    "name": "Lampung Tengah",
+    "type": "Kabupaten",
+    "lat": -4.86667,
+    "lon": 105.26667,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 22.0
+  },
+  {
+    "id": "1806",
+    "name": "Lampung Utara",
+    "type": "Kabupaten",
+    "lat": -4.81667,
+    "lon": 104.8,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 45.0
+  },
+  {
+    "id": "1807",
+    "name": "Way Kanan",
+    "type": "Kabupaten",
+    "lat": -4.44705,
+    "lon": 104.52753,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 85.0
+  },
+  {
+    "id": "1808",
+    "name": "Tulangbawang",
+    "type": "Kabupaten",
+    "lat": -4.20604,
+    "lon": 105.57999,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 16.0
+  },
+  {
+    "id": "1809",
+    "name": "Pesawaran",
+    "type": "Kabupaten",
+    "lat": -5.4298,
+    "lon": 105.17899,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 520.0
+  },
+  {
+    "id": "1810",
+    "name": "Pringsewu",
+    "type": "Kabupaten",
+    "lat": -5.42211,
+    "lon": 104.93454,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 106.0
+  },
+  {
+    "id": "1811",
+    "name": "Mesuji",
+    "type": "Kabupaten",
+    "lat": -4.0439,
+    "lon": 105.4013,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 14.0
+  },
+  {
+    "id": "1812",
+    "name": "Tulang Bawang Barat",
+    "type": "Kabupaten",
+    "lat": -4.43975,
+    "lon": 105.0444,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 29.0
+  },
+  {
+    "id": "1813",
+    "name": "Pesisir Barat",
+    "type": "Kabupaten",
+    "lat": -5.19323,
+    "lon": 103.93976,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 26.0
+  },
+  {
+    "id": "1871",
+    "name": "Bandar Lampung",
+    "type": "Kota",
+    "lat": -5.41667,
+    "lon": 105.25,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 112.0
+  },
+  {
+    "id": "1872",
+    "name": "Metro",
+    "type": "Kota",
+    "lat": -5.11856,
+    "lon": 105.29949,
+    "province": "Lampung",
+    "province_id": "18",
+    "elevation_m": 49.0
+  },
+  {
+    "id": "1901",
+    "name": "Bangka",
+    "type": "Kabupaten",
+    "lat": -1.91667,
+    "lon": 105.93333,
+    "province": "Kepulauan Bangka Belitung",
+    "province_id": "19",
+    "elevation_m": 24.0
+  },
+  {
+    "id": "1902",
+    "name": "Belitung",
+    "type": "Kabupaten",
+    "lat": -2.86667,
+    "lon": 107.7,
+    "province": "Kepulauan Bangka Belitung",
+    "province_id": "19",
+    "elevation_m": 42.0
+  },
+  {
+    "id": "1903",
+    "name": "Bangka Barat",
+    "type": "Kabupaten",
+    "lat": -1.95839,
+    "lon": 105.53741,
+    "province": "Kepulauan Bangka Belitung",
+    "province_id": "19",
+    "elevation_m": 25.0
+  },
+  {
+    "id": "1904",
+    "name": "Bangka Tengah",
+    "type": "Kabupaten",
+    "lat": -2.33989,
+    "lon": 106.1142,
+    "province": "Kepulauan Bangka Belitung",
+    "province_id": "19",
+    "elevation_m": 60.0
+  },
+  {
+    "id": "1905",
+    "name": "Bangka Selatan",
+    "type": "Kabupaten",
+    "lat": -2.66803,
+    "lon": 106.01257,
+    "province": "Kepulauan Bangka Belitung",
+    "province_id": "19",
+    "elevation_m": 19.0
+  },
+  {
+    "id": "1906",
+    "name": "Belitung Timur",
+    "type": "Kabupaten",
+    "lat": -2.9627,
+    "lon": 108.15216,
+    "province": "Kepulauan Bangka Belitung",
+    "province_id": "19",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "1971",
+    "name": "Pangkal Pinang",
+    "type": "Kota",
+    "lat": -2.13333,
+    "lon": 106.13333,
+    "province": "Kepulauan Bangka Belitung",
+    "province_id": "19",
+    "elevation_m": 19.0
+  },
+  {
+    "id": "2101",
+    "name": "Karimun",
+    "type": "Kabupaten",
+    "lat": 0.80764,
+    "lon": 103.41911,
+    "province": "Kepulauan Riau",
+    "province_id": "21",
+    "elevation_m": 19.0
+  },
+  {
+    "id": "2102",
+    "name": "Bintan",
+    "type": "Kabupaten",
+    "lat": 0.95,
+    "lon": 104.61944,
+    "province": "Kepulauan Riau",
+    "province_id": "21",
+    "elevation_m": 31.0
+  },
+  {
+    "id": "2103",
+    "name": "Natuna",
+    "type": "Kabupaten",
+    "lat": 4.71417,
+    "lon": 107.97639,
+    "province": "Kepulauan Riau",
+    "province_id": "21",
+    "elevation_m": 119.0
+  },
+  {
+    "id": "2104",
+    "name": "Lingga",
+    "type": "Kabupaten",
+    "lat": 0.2,
+    "lon": 104.61667,
+    "province": "Kepulauan Riau",
+    "province_id": "21",
+    "elevation_m": 0.0
+  },
+  {
+    "id": "2105",
+    "name": "Kepulauan Anambas",
+    "type": "Kabupaten",
+    "lat": 3,
+    "lon": 106,
+    "province": "Kepulauan Riau",
+    "province_id": "21",
+    "elevation_m": 0.0
+  },
+  {
+    "id": "2171",
+    "name": "Batam",
+    "type": "Kota",
+    "lat": 1.05211,
+    "lon": 104.02851,
+    "province": "Kepulauan Riau",
+    "province_id": "21",
+    "elevation_m": 91.0
+  },
+  {
+    "id": "2172",
+    "name": "Tanjung Pinang",
+    "type": "Kota",
+    "lat": 0.91683,
+    "lon": 104.44329,
+    "province": "Kepulauan Riau",
+    "province_id": "21",
+    "elevation_m": -2.0
+  },
+  {
+    "id": "3101",
+    "name": "Kepulauan Seribu",
+    "type": "Kabupaten",
+    "lat": -5.5985,
+    "lon": 106.55271,
+    "province": "Dki Jakarta",
+    "province_id": "31",
+    "elevation_m": 0.0
+  },
+  {
+    "id": "3171",
+    "name": "Jakarta Selatan",
+    "type": "Kota",
+    "lat": -6.266,
+    "lon": 106.8135,
+    "province": "Dki Jakarta",
+    "province_id": "31",
+    "elevation_m": 23.0
+  },
+  {
+    "id": "3172",
+    "name": "Jakarta Timur",
+    "type": "Kota",
+    "lat": -6.2521,
+    "lon": 106.884,
+    "province": "Dki Jakarta",
+    "province_id": "31",
+    "elevation_m": 26.0
+  },
+  {
+    "id": "3173",
+    "name": "Jakarta Pusat",
+    "type": "Kota",
+    "lat": -6.1777,
+    "lon": 106.8403,
+    "province": "Dki Jakarta",
+    "province_id": "31",
+    "elevation_m": 6.0
+  },
+  {
+    "id": "3174",
+    "name": "Jakarta Barat",
+    "type": "Kota",
+    "lat": -6.1676,
+    "lon": 106.7673,
+    "province": "Dki Jakarta",
+    "province_id": "31",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "3175",
+    "name": "Jakarta Utara",
+    "type": "Kota",
+    "lat": -6.1339,
+    "lon": 106.8823,
+    "province": "Dki Jakarta",
+    "province_id": "31",
+    "elevation_m": 5.0
+  },
+  {
+    "id": "3201",
+    "name": "Bogor",
+    "type": "Kabupaten",
+    "lat": -6.58333,
+    "lon": 106.71667,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 206.0
+  },
+  {
+    "id": "3202",
+    "name": "Sukabumi",
+    "type": "Kabupaten",
+    "lat": -7.06667,
+    "lon": 106.7,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 703.0
+  },
+  {
+    "id": "3203",
+    "name": "Cianjur",
+    "type": "Kabupaten",
+    "lat": -6.7725,
+    "lon": 107.08306,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 1093.0
+  },
+  {
+    "id": "3204",
+    "name": "Bandung",
+    "type": "Kabupaten",
+    "lat": -7.1,
+    "lon": 107.6,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 1094.0
+  },
+  {
+    "id": "3205",
+    "name": "Garut",
+    "type": "Kabupaten",
+    "lat": -7.38333,
+    "lon": 107.76667,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 1443.0
+  },
+  {
+    "id": "3206",
+    "name": "Tasikmalaya",
+    "type": "Kabupaten",
+    "lat": -7.5,
+    "lon": 108.13333,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 291.0
+  },
+  {
+    "id": "3207",
+    "name": "Ciamis",
+    "type": "Kabupaten",
+    "lat": -7.28333,
+    "lon": 108.41667,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 188.0
+  },
+  {
+    "id": "3208",
+    "name": "Kuningan",
+    "type": "Kabupaten",
+    "lat": -7,
+    "lon": 108.55,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 245.0
+  },
+  {
+    "id": "3209",
+    "name": "Cirebon",
+    "type": "Kabupaten",
+    "lat": -6.8,
+    "lon": 108.56667,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 98.0
+  },
+  {
+    "id": "3210",
+    "name": "Majalengka",
+    "type": "Kabupaten",
+    "lat": -6.81667,
+    "lon": 108.28333,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 151.0
+  },
+  {
+    "id": "3211",
+    "name": "Sumedang",
+    "type": "Kabupaten",
+    "lat": -6.81667,
+    "lon": 107.98333,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 455.0
+  },
+  {
+    "id": "3212",
+    "name": "Indramayu",
+    "type": "Kabupaten",
+    "lat": -6.45,
+    "lon": 108.16667,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 9.0
+  },
+  {
+    "id": "3213",
+    "name": "Subang",
+    "type": "Kabupaten",
+    "lat": -6.50833,
+    "lon": 107.7025,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 97.0
+  },
+  {
+    "id": "3214",
+    "name": "Purwakarta",
+    "type": "Kabupaten",
+    "lat": -6.58333,
+    "lon": 107.45,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 78.0
+  },
+  {
+    "id": "3215",
+    "name": "Karawang",
+    "type": "Kabupaten",
+    "lat": -6.26667,
+    "lon": 107.41667,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 4.0
+  },
+  {
+    "id": "3216",
+    "name": "Bekasi",
+    "type": "Kabupaten",
+    "lat": -6.24667,
+    "lon": 107.10833,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 16.0
+  },
+  {
+    "id": "3217",
+    "name": "Bandung Barat",
+    "type": "Kabupaten",
+    "lat": -6.83333,
+    "lon": 107.48333,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 744.0
+  },
+  {
+    "id": "3218",
+    "name": "Pangandaran",
+    "type": "Kabupaten",
+    "lat": -7.6673,
+    "lon": 108.64037,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 0.0
+  },
+  {
+    "id": "3271",
+    "name": "Bogor",
+    "type": "Kota",
+    "lat": -6.59167,
+    "lon": 106.8,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 245.0
+  },
+  {
+    "id": "3272",
+    "name": "Sukabumi",
+    "type": "Kota",
+    "lat": -6.95,
+    "lon": 106.93333,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 506.0
+  },
+  {
+    "id": "3273",
+    "name": "Bandung",
+    "type": "Kota",
+    "lat": -6.9175,
+    "lon": 107.62444,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 698.0
+  },
+  {
+    "id": "3274",
+    "name": "Cirebon",
+    "type": "Kota",
+    "lat": -6.75,
+    "lon": 108.55,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 18.0
+  },
+  {
+    "id": "3275",
+    "name": "Bekasi",
+    "type": "Kota",
+    "lat": -6.28333,
+    "lon": 106.98333,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 28.0
+  },
+  {
+    "id": "3276",
+    "name": "Depok",
+    "type": "Kota",
+    "lat": -6.4,
+    "lon": 106.81667,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 91.0
+  },
+  {
+    "id": "3277",
+    "name": "Cimahi",
+    "type": "Kota",
+    "lat": -6.89167,
+    "lon": 107.55,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 736.0
+  },
+  {
+    "id": "3278",
+    "name": "Tasikmalaya",
+    "type": "Kota",
+    "lat": -7.35,
+    "lon": 108.21667,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 358.0
+  },
+  {
+    "id": "3279",
+    "name": "Banjar",
+    "type": "Kota",
+    "lat": -7.36996,
+    "lon": 108.53209,
+    "province": "Jawa Barat",
+    "province_id": "32",
+    "elevation_m": 41.0
+  },
+  {
+    "id": "3301",
+    "name": "Cilacap",
+    "type": "Kabupaten",
+    "lat": -7.57417,
+    "lon": 108.98861,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 49.0
+  },
+  {
+    "id": "3302",
+    "name": "Banyumas",
+    "type": "Kabupaten",
+    "lat": -7.45,
+    "lon": 109.16667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 95.0
+  },
+  {
+    "id": "3303",
+    "name": "Purbalingga",
+    "type": "Kabupaten",
+    "lat": -7.28417,
+    "lon": 109.35028,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 263.0
+  },
+  {
+    "id": "3304",
+    "name": "Banjarnegara",
+    "type": "Kabupaten",
+    "lat": -7.35111,
+    "lon": 109.5875,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 309.0
+  },
+  {
+    "id": "3305",
+    "name": "Kebumen",
+    "type": "Kabupaten",
+    "lat": -7.63917,
+    "lon": 109.66056,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 134.0
+  },
+  {
+    "id": "3306",
+    "name": "Purworejo",
+    "type": "Kabupaten",
+    "lat": -7.7,
+    "lon": 109.96667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 36.0
+  },
+  {
+    "id": "3307",
+    "name": "Wonosobo",
+    "type": "Kabupaten",
+    "lat": -7.36139,
+    "lon": 109.92667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 804.0
+  },
+  {
+    "id": "3308",
+    "name": "Magelang",
+    "type": "Kabupaten",
+    "lat": -7.4275,
+    "lon": 110.16194,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 772.0
+  },
+  {
+    "id": "3309",
+    "name": "Boyolali",
+    "type": "Kabupaten",
+    "lat": -7.5,
+    "lon": 110.7,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 185.0
+  },
+  {
+    "id": "3310",
+    "name": "Klaten",
+    "type": "Kabupaten",
+    "lat": -7.68333,
+    "lon": 110.61667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 183.0
+  },
+  {
+    "id": "3311",
+    "name": "Sukoharjo",
+    "type": "Kabupaten",
+    "lat": -7.68333,
+    "lon": 110.83333,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 100.0
+  },
+  {
+    "id": "3312",
+    "name": "Wonogiri",
+    "type": "Kabupaten",
+    "lat": -7.91667,
+    "lon": 111,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 344.0
+  },
+  {
+    "id": "3313",
+    "name": "Karanganyar",
+    "type": "Kabupaten",
+    "lat": -7.62806,
+    "lon": 111.0625,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 496.0
+  },
+  {
+    "id": "3314",
+    "name": "Sragen",
+    "type": "Kabupaten",
+    "lat": -7.41278,
+    "lon": 110.935,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 78.0
+  },
+  {
+    "id": "3315",
+    "name": "Grobogan",
+    "type": "Kabupaten",
+    "lat": -7.11667,
+    "lon": 110.91667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 32.0
+  },
+  {
+    "id": "3316",
+    "name": "Blora",
+    "type": "Kabupaten",
+    "lat": -7.06667,
+    "lon": 111.38333,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 125.0
+  },
+  {
+    "id": "3317",
+    "name": "Rembang",
+    "type": "Kabupaten",
+    "lat": -6.78333,
+    "lon": 111.46667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 53.0
+  },
+  {
+    "id": "3318",
+    "name": "Pati",
+    "type": "Kabupaten",
+    "lat": -6.76667,
+    "lon": 111.1,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "3319",
+    "name": "Kudus",
+    "type": "Kabupaten",
+    "lat": -6.8,
+    "lon": 110.86667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 24.0
+  },
+  {
+    "id": "3320",
+    "name": "Jepara",
+    "type": "Kabupaten",
+    "lat": -6.58333,
+    "lon": 110.76667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 155.0
+  },
+  {
+    "id": "3321",
+    "name": "Demak",
+    "type": "Kabupaten",
+    "lat": -6.8993,
+    "lon": 110.6122,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 5.0
+  },
+  {
+    "id": "3322",
+    "name": "Semarang",
+    "type": "Kabupaten",
+    "lat": -7.20667,
+    "lon": 110.44139,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 551.0
+  },
+  {
+    "id": "3323",
+    "name": "Temanggung",
+    "type": "Kabupaten",
+    "lat": -7.25,
+    "lon": 110.11667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 711.0
+  },
+  {
+    "id": "3324",
+    "name": "Kendal",
+    "type": "Kabupaten",
+    "lat": -7.0256,
+    "lon": 110.1685,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 38.0
+  },
+  {
+    "id": "3325",
+    "name": "Batang",
+    "type": "Kabupaten",
+    "lat": -7.03333,
+    "lon": 109.88333,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 375.0
+  },
+  {
+    "id": "3326",
+    "name": "Pekalongan",
+    "type": "Kabupaten",
+    "lat": -7.0319,
+    "lon": 109.624,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 89.0
+  },
+  {
+    "id": "3327",
+    "name": "Pemalang",
+    "type": "Kabupaten",
+    "lat": -7.03333,
+    "lon": 109.4,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 74.0
+  },
+  {
+    "id": "3328",
+    "name": "Tegal",
+    "type": "Kabupaten",
+    "lat": -7.03333,
+    "lon": 109.16667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 132.0
+  },
+  {
+    "id": "3329",
+    "name": "Brebes",
+    "type": "Kabupaten",
+    "lat": -7.05,
+    "lon": 108.9,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 51.0
+  },
+  {
+    "id": "3371",
+    "name": "Magelang",
+    "type": "Kota",
+    "lat": -7.5,
+    "lon": 110.225,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 348.0
+  },
+  {
+    "id": "3372",
+    "name": "Surakarta",
+    "type": "Kota",
+    "lat": -7.55,
+    "lon": 110.81667,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 96.0
+  },
+  {
+    "id": "3373",
+    "name": "Salatiga",
+    "type": "Kota",
+    "lat": -7.33278,
+    "lon": 110.48333,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 550.0
+  },
+  {
+    "id": "3374",
+    "name": "Semarang",
+    "type": "Kota",
+    "lat": -7.03333,
+    "lon": 110.38333,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 83.0
+  },
+  {
+    "id": "3375",
+    "name": "Pekalongan",
+    "type": "Kota",
+    "lat": -6.9,
+    "lon": 109.68333,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 9.0
+  },
+  {
+    "id": "3376",
+    "name": "Tegal",
+    "type": "Kota",
+    "lat": -6.8686,
+    "lon": 109.1129,
+    "province": "Jawa Tengah",
+    "province_id": "33",
+    "elevation_m": 2.0
+  },
+  {
+    "id": "3401",
+    "name": "Kulon Progo",
+    "type": "Kabupaten",
+    "lat": -7.645,
+    "lon": 110.02694,
+    "province": "Di Yogyakarta",
+    "province_id": "34",
+    "elevation_m": 197.0
+  },
+  {
+    "id": "3402",
+    "name": "Bantul",
+    "type": "Kabupaten",
+    "lat": -7.9,
+    "lon": 110.36667,
+    "province": "Di Yogyakarta",
+    "province_id": "34",
+    "elevation_m": 44.0
+  },
+  {
+    "id": "3403",
+    "name": "Gunung Kidul",
+    "type": "Kabupaten",
+    "lat": -7.98333,
+    "lon": 110.61667,
+    "province": "Di Yogyakarta",
+    "province_id": "34",
+    "elevation_m": 186.0
+  },
+  {
+    "id": "3404",
+    "name": "Sleman",
+    "type": "Kabupaten",
+    "lat": -7.68167,
+    "lon": 110.32333,
+    "province": "Di Yogyakarta",
+    "province_id": "34",
+    "elevation_m": 255.0
+  },
+  {
+    "id": "3471",
+    "name": "Yogyakarta",
+    "type": "Kota",
+    "lat": -7.8,
+    "lon": 110.375,
+    "province": "Di Yogyakarta",
+    "province_id": "34",
+    "elevation_m": 113.0
+  },
+  {
+    "id": "3501",
+    "name": "Pacitan",
+    "type": "Kabupaten",
+    "lat": -8.13333,
+    "lon": 111.16667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 184.0
+  },
+  {
+    "id": "3502",
+    "name": "Ponorogo",
+    "type": "Kabupaten",
+    "lat": -7.93333,
+    "lon": 111.5,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 119.0
+  },
+  {
+    "id": "3503",
+    "name": "Trenggalek",
+    "type": "Kabupaten",
+    "lat": -8.16667,
+    "lon": 111.61667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 520.0
+  },
+  {
+    "id": "3504",
+    "name": "Tulungagung",
+    "type": "Kabupaten",
+    "lat": -8.11667,
+    "lon": 111.91667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 97.0
+  },
+  {
+    "id": "3505",
+    "name": "Blitar",
+    "type": "Kabupaten",
+    "lat": -8.13333,
+    "lon": 112.25,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 174.0
+  },
+  {
+    "id": "3506",
+    "name": "Kediri",
+    "type": "Kabupaten",
+    "lat": -7.83333,
+    "lon": 112.16667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 186.0
+  },
+  {
+    "id": "3507",
+    "name": "Malang",
+    "type": "Kabupaten",
+    "lat": -8.16667,
+    "lon": 112.66667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 385.0
+  },
+  {
+    "id": "3508",
+    "name": "Lumajang",
+    "type": "Kabupaten",
+    "lat": -8.11667,
+    "lon": 113.15,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 146.0
+  },
+  {
+    "id": "3509",
+    "name": "Jember",
+    "type": "Kabupaten",
+    "lat": -8.25,
+    "lon": 113.65,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 66.0
+  },
+  {
+    "id": "3510",
+    "name": "Banyuwangi",
+    "type": "Kabupaten",
+    "lat": -8.33333,
+    "lon": 114.2,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 176.0
+  },
+  {
+    "id": "3511",
+    "name": "Bondowoso",
+    "type": "Kabupaten",
+    "lat": -7.9404,
+    "lon": 113.9834,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 522.0
+  },
+  {
+    "id": "3512",
+    "name": "Situbondo",
+    "type": "Kabupaten",
+    "lat": -7.71667,
+    "lon": 114.05,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 57.0
+  },
+  {
+    "id": "3513",
+    "name": "Probolinggo",
+    "type": "Kabupaten",
+    "lat": -7.86667,
+    "lon": 113.31667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 128.0
+  },
+  {
+    "id": "3514",
+    "name": "Pasuruan",
+    "type": "Kabupaten",
+    "lat": -7.73333,
+    "lon": 112.83333,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 67.0
+  },
+  {
+    "id": "3515",
+    "name": "Sidoarjo",
+    "type": "Kabupaten",
+    "lat": -7.45,
+    "lon": 112.7,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "3516",
+    "name": "Mojokerto",
+    "type": "Kabupaten",
+    "lat": -7.55,
+    "lon": 112.5,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 75.0
+  },
+  {
+    "id": "3517",
+    "name": "Jombang",
+    "type": "Kabupaten",
+    "lat": -7.55,
+    "lon": 112.25,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 41.0
+  },
+  {
+    "id": "3518",
+    "name": "Nganjuk",
+    "type": "Kabupaten",
+    "lat": -7.6,
+    "lon": 111.93333,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 54.0
+  },
+  {
+    "id": "3519",
+    "name": "Madiun",
+    "type": "Kabupaten",
+    "lat": -7.61667,
+    "lon": 111.65,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 145.0
+  },
+  {
+    "id": "3520",
+    "name": "Magetan",
+    "type": "Kabupaten",
+    "lat": -7.64472,
+    "lon": 111.35917,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 261.0
+  },
+  {
+    "id": "3521",
+    "name": "Ngawi",
+    "type": "Kabupaten",
+    "lat": -7.47444,
+    "lon": 111.33444,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 85.0
+  },
+  {
+    "id": "3522",
+    "name": "Bojonegoro",
+    "type": "Kabupaten",
+    "lat": -7.25,
+    "lon": 111.8,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 69.0
+  },
+  {
+    "id": "3523",
+    "name": "Tuban",
+    "type": "Kabupaten",
+    "lat": -6.96667,
+    "lon": 111.9,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 215.0
+  },
+  {
+    "id": "3524",
+    "name": "Lamongan",
+    "type": "Kabupaten",
+    "lat": -7.13333,
+    "lon": 112.31667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 13.0
+  },
+  {
+    "id": "3525",
+    "name": "Gresik",
+    "type": "Kabupaten",
+    "lat": -7.1933,
+    "lon": 112.553,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 4.0
+  },
+  {
+    "id": "3526",
+    "name": "Bangkalan",
+    "type": "Kabupaten",
+    "lat": -7.05,
+    "lon": 112.93333,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 143.0
+  },
+  {
+    "id": "3527",
+    "name": "Sampang",
+    "type": "Kabupaten",
+    "lat": -7.05,
+    "lon": 113.25,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 65.0
+  },
+  {
+    "id": "3528",
+    "name": "Pamekasan",
+    "type": "Kabupaten",
+    "lat": -7.06667,
+    "lon": 113.5,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 176.0
+  },
+  {
+    "id": "3529",
+    "name": "Sumenep",
+    "type": "Kabupaten",
+    "lat": -7.11667,
+    "lon": 114.33333,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 39.0
+  },
+  {
+    "id": "3571",
+    "name": "Kediri",
+    "type": "Kota",
+    "lat": -7.83333,
+    "lon": 112.01667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 75.0
+  },
+  {
+    "id": "3572",
+    "name": "Blitar",
+    "type": "Kota",
+    "lat": -8.1,
+    "lon": 112.16667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 179.0
+  },
+  {
+    "id": "3573",
+    "name": "Malang",
+    "type": "Kota",
+    "lat": -7.975,
+    "lon": 112.63333,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 455.0
+  },
+  {
+    "id": "3574",
+    "name": "Probolinggo",
+    "type": "Kota",
+    "lat": -7.78333,
+    "lon": 113.21667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 29.0
+  },
+  {
+    "id": "3575",
+    "name": "Pasuruan",
+    "type": "Kota",
+    "lat": -7.65,
+    "lon": 112.9,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 9.0
+  },
+  {
+    "id": "3576",
+    "name": "Mojokerto",
+    "type": "Kota",
+    "lat": -7.46667,
+    "lon": 112.43333,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 27.0
+  },
+  {
+    "id": "3577",
+    "name": "Madiun",
+    "type": "Kota",
+    "lat": -7.63333,
+    "lon": 111.53333,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 71.0
+  },
+  {
+    "id": "3578",
+    "name": "Surabaya",
+    "type": "Kota",
+    "lat": -7.26667,
+    "lon": 112.71667,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "3579",
+    "name": "Batu",
+    "type": "Kota",
+    "lat": -7.83272,
+    "lon": 112.53751,
+    "province": "Jawa Timur",
+    "province_id": "35",
+    "elevation_m": 1062.0
+  },
+  {
+    "id": "3601",
+    "name": "Pandeglang",
+    "type": "Kabupaten",
+    "lat": -6.63333,
+    "lon": 105.75,
+    "province": "Banten",
+    "province_id": "36",
+    "elevation_m": 23.0
+  },
+  {
+    "id": "3602",
+    "name": "Lebak",
+    "type": "Kabupaten",
+    "lat": -6.65,
+    "lon": 106.21667,
+    "province": "Banten",
+    "province_id": "36",
+    "elevation_m": 323.0
+  },
+  {
+    "id": "3603",
+    "name": "Tangerang",
+    "type": "Kabupaten",
+    "lat": -6.2,
+    "lon": 106.46667,
+    "province": "Banten",
+    "province_id": "36",
+    "elevation_m": 10.0
+  },
+  {
+    "id": "3604",
+    "name": "Serang",
+    "type": "Kabupaten",
+    "lat": -6.15,
+    "lon": 106,
+    "province": "Banten",
+    "province_id": "36",
+    "elevation_m": 93.0
+  },
+  {
+    "id": "3671",
+    "name": "Tangerang",
+    "type": "Kota",
+    "lat": -6.17944,
+    "lon": 106.62991,
+    "province": "Banten",
+    "province_id": "36",
+    "elevation_m": 18.0
+  },
+  {
+    "id": "3672",
+    "name": "Cilegon",
+    "type": "Kota",
+    "lat": -6.01667,
+    "lon": 106.01667,
+    "province": "Banten",
+    "province_id": "36",
+    "elevation_m": 24.0
+  },
+  {
+    "id": "3673",
+    "name": "Serang",
+    "type": "Kota",
+    "lat": -6.12563,
+    "lon": 106.14999,
+    "province": "Banten",
+    "province_id": "36",
+    "elevation_m": 31.0
+  },
+  {
+    "id": "3674",
+    "name": "Tangerang Selatan",
+    "type": "Kota",
+    "lat": -6.29373,
+    "lon": 106.71244,
+    "province": "Banten",
+    "province_id": "36",
+    "elevation_m": 45.0
+  },
+  {
+    "id": "5101",
+    "name": "Jembrana",
+    "type": "Kabupaten",
+    "lat": -8.3,
+    "lon": 114.66667,
+    "province": "Bali",
+    "province_id": "51",
+    "elevation_m": 458.0
+  },
+  {
+    "id": "5102",
+    "name": "Tabanan",
+    "type": "Kabupaten",
+    "lat": -8.43333,
+    "lon": 115.06667,
+    "province": "Bali",
+    "province_id": "51",
+    "elevation_m": 441.0
+  },
+  {
+    "id": "5103",
+    "name": "Badung",
+    "type": "Kabupaten",
+    "lat": -8.51667,
+    "lon": 115.2,
+    "province": "Bali",
+    "province_id": "51",
+    "elevation_m": 166.0
+  },
+  {
+    "id": "5104",
+    "name": "Gianyar",
+    "type": "Kabupaten",
+    "lat": -8.46667,
+    "lon": 115.28333,
+    "province": "Bali",
+    "province_id": "51",
+    "elevation_m": 339.0
+  },
+  {
+    "id": "5105",
+    "name": "Klungkung",
+    "type": "Kabupaten",
+    "lat": -8.55,
+    "lon": 115.4,
+    "province": "Bali",
+    "province_id": "51",
+    "elevation_m": 51.0
+  },
+  {
+    "id": "5106",
+    "name": "Bangli",
+    "type": "Kabupaten",
+    "lat": -8.28333,
+    "lon": 115.35,
+    "province": "Bali",
+    "province_id": "51",
+    "elevation_m": 1288.0
+  },
+  {
+    "id": "5107",
+    "name": "Karang Asem",
+    "type": "Kabupaten",
+    "lat": -8.3891,
+    "lon": 115.5393,
+    "province": "Bali",
+    "province_id": "51",
+    "elevation_m": 813.0
+  },
+  {
+    "id": "5108",
+    "name": "Buleleng",
+    "type": "Kabupaten",
+    "lat": -8.25,
+    "lon": 114.96667,
+    "province": "Bali",
+    "province_id": "51",
+    "elevation_m": 211.0
+  },
+  {
+    "id": "5171",
+    "name": "Denpasar",
+    "type": "Kota",
+    "lat": -8.66667,
+    "lon": 115.21663,
+    "province": "Bali",
+    "province_id": "51",
+    "elevation_m": 21.0
+  },
+  {
+    "id": "5201",
+    "name": "Lombok Barat",
+    "type": "Kabupaten",
+    "lat": -8.69583,
+    "lon": 116.11667,
+    "province": "Nusa Tenggara Barat",
+    "province_id": "52",
+    "elevation_m": 16.0
+  },
+  {
+    "id": "5202",
+    "name": "Lombok Tengah",
+    "type": "Kabupaten",
+    "lat": -8.7,
+    "lon": 116.3,
+    "province": "Nusa Tenggara Barat",
+    "province_id": "52",
+    "elevation_m": 147.0
+  },
+  {
+    "id": "5203",
+    "name": "Lombok Timur",
+    "type": "Kabupaten",
+    "lat": -8.53333,
+    "lon": 116.53333,
+    "province": "Nusa Tenggara Barat",
+    "province_id": "52",
+    "elevation_m": 436.0
+  },
+  {
+    "id": "5204",
+    "name": "Sumbawa",
+    "type": "Kabupaten",
+    "lat": -8.7439,
+    "lon": 117.3324,
+    "province": "Nusa Tenggara Barat",
+    "province_id": "52",
+    "elevation_m": 369.0
+  },
+  {
+    "id": "5205",
+    "name": "Dompu",
+    "type": "Kabupaten",
+    "lat": -8.5094,
+    "lon": 118.4816,
+    "province": "Nusa Tenggara Barat",
+    "province_id": "52",
+    "elevation_m": 132.0
+  },
+  {
+    "id": "5206",
+    "name": "Bima",
+    "type": "Kabupaten",
+    "lat": -8.6,
+    "lon": 118.61667,
+    "province": "Nusa Tenggara Barat",
+    "province_id": "52",
+    "elevation_m": 59.0
+  },
+  {
+    "id": "5207",
+    "name": "Sumbawa Barat",
+    "type": "Kabupaten",
+    "lat": -8.75159,
+    "lon": 116.92132,
+    "province": "Nusa Tenggara Barat",
+    "province_id": "52",
+    "elevation_m": 262.0
+  },
+  {
+    "id": "5208",
+    "name": "Lombok Utara",
+    "type": "Kabupaten",
+    "lat": -8.35214,
+    "lon": 116.40152,
+    "province": "Nusa Tenggara Barat",
+    "province_id": "52",
+    "elevation_m": 1513.0
+  },
+  {
+    "id": "5271",
+    "name": "Mataram",
+    "type": "Kota",
+    "lat": -8.5833,
+    "lon": 116.1167,
+    "province": "Nusa Tenggara Barat",
+    "province_id": "52",
+    "elevation_m": 24.0
+  },
+  {
+    "id": "5272",
+    "name": "Bima",
+    "type": "Kota",
+    "lat": -8.46728,
+    "lon": 118.75259,
+    "province": "Nusa Tenggara Barat",
+    "province_id": "52",
+    "elevation_m": 21.0
+  },
+  {
+    "id": "5301",
+    "name": "Sumba Barat",
+    "type": "Kabupaten",
+    "lat": -9.56667,
+    "lon": 119.45,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 481.0
+  },
+  {
+    "id": "5302",
+    "name": "Sumba Timur",
+    "type": "Kabupaten",
+    "lat": -9.88333,
+    "lon": 120.25,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 511.0
+  },
+  {
+    "id": "5303",
+    "name": "Kupang",
+    "type": "Kabupaten",
+    "lat": -9.91667,
+    "lon": 123.83333,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 658.0
+  },
+  {
+    "id": "5304",
+    "name": "Timor Tengah Selatan",
+    "type": "Kabupaten",
+    "lat": -9.83333,
+    "lon": 124.4,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 700.0
+  },
+  {
+    "id": "5305",
+    "name": "Timor Tengah Utara",
+    "type": "Kabupaten",
+    "lat": -9.33136,
+    "lon": 124.51904,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 340.0
+  },
+  {
+    "id": "5306",
+    "name": "Belu",
+    "type": "Kabupaten",
+    "lat": -9.41258,
+    "lon": 124.95066,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 321.0
+  },
+  {
+    "id": "5307",
+    "name": "Alor",
+    "type": "Kabupaten",
+    "lat": -8.3,
+    "lon": 124.56667,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 749.0
+  },
+  {
+    "id": "5308",
+    "name": "Lembata",
+    "type": "Kabupaten",
+    "lat": -8.41396,
+    "lon": 123.55225,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 172.0
+  },
+  {
+    "id": "5309",
+    "name": "Flores Timur",
+    "type": "Kabupaten",
+    "lat": -8.24224,
+    "lon": 122.96817,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 304.0
+  },
+  {
+    "id": "5310",
+    "name": "Sikka",
+    "type": "Kabupaten",
+    "lat": -8.66667,
+    "lon": 122.36667,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 556.0
+  },
+  {
+    "id": "5311",
+    "name": "Ende",
+    "type": "Kabupaten",
+    "lat": -8.84056,
+    "lon": 121.66389,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 42.0
+  },
+  {
+    "id": "5312",
+    "name": "Ngada",
+    "type": "Kabupaten",
+    "lat": -8.66667,
+    "lon": 121,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 541.0
+  },
+  {
+    "id": "5313",
+    "name": "Manggarai",
+    "type": "Kabupaten",
+    "lat": -8.56667,
+    "lon": 120.41667,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 932.0
+  },
+  {
+    "id": "5314",
+    "name": "Rote Ndao",
+    "type": "Kabupaten",
+    "lat": -10.73617,
+    "lon": 123.12054,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 175.0
+  },
+  {
+    "id": "5315",
+    "name": "Manggarai Barat",
+    "type": "Kabupaten",
+    "lat": -8.64484,
+    "lon": 119.88281,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 313.0
+  },
+  {
+    "id": "5316",
+    "name": "Sumba Tengah",
+    "type": "Kabupaten",
+    "lat": -9.62941,
+    "lon": 119.61914,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 437.0
+  },
+  {
+    "id": "5317",
+    "name": "Sumba Barat Daya",
+    "type": "Kabupaten",
+    "lat": -9.56216,
+    "lon": 119.08905,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 153.0
+  },
+  {
+    "id": "5318",
+    "name": "Nagekeo",
+    "type": "Kabupaten",
+    "lat": -8.8721,
+    "lon": 121.20963,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 110.0
+  },
+  {
+    "id": "5319",
+    "name": "Manggarai Timur",
+    "type": "Kabupaten",
+    "lat": -8.55533,
+    "lon": 120.59761,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 1039.0
+  },
+  {
+    "id": "5320",
+    "name": "Sabu Raijua",
+    "type": "Kabupaten",
+    "lat": -10.56286,
+    "lon": 121.78894,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 190.0
+  },
+  {
+    "id": "5321",
+    "name": "Malaka",
+    "type": "Kabupaten",
+    "lat": -9.5632,
+    "lon": 124.89481,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 118.0
+  },
+  {
+    "id": "5371",
+    "name": "Kupang",
+    "type": "Kota",
+    "lat": -10.21667,
+    "lon": 123.6,
+    "province": "Nusa Tenggara Timur",
+    "province_id": "53",
+    "elevation_m": 232.0
+  },
+  {
+    "id": "6101",
+    "name": "Sambas",
+    "type": "Kabupaten",
+    "lat": 1.41667,
+    "lon": 109.33333,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 5.0
+  },
+  {
+    "id": "6102",
+    "name": "Bengkayang",
+    "type": "Kabupaten",
+    "lat": 1.06911,
+    "lon": 109.66393,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 96.0
+  },
+  {
+    "id": "6103",
+    "name": "Landak",
+    "type": "Kabupaten",
+    "lat": 0.42373,
+    "lon": 109.75917,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 45.0
+  },
+  {
+    "id": "6104",
+    "name": "Mempawah",
+    "type": "Kabupaten",
+    "lat": 0.25,
+    "lon": 109.16667,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 24.0
+  },
+  {
+    "id": "6105",
+    "name": "Sanggau",
+    "type": "Kabupaten",
+    "lat": 0.25472,
+    "lon": 110.45,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 58.0
+  },
+  {
+    "id": "6106",
+    "name": "Ketapang",
+    "type": "Kabupaten",
+    "lat": -1.58333,
+    "lon": 110.5,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 30.0
+  },
+  {
+    "id": "6107",
+    "name": "Sintang",
+    "type": "Kabupaten",
+    "lat": -0.08333,
+    "lon": 112.08333,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 100.0
+  },
+  {
+    "id": "6108",
+    "name": "Kapuas Hulu",
+    "type": "Kabupaten",
+    "lat": 0.81667,
+    "lon": 112.76667,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 52.0
+  },
+  {
+    "id": "6109",
+    "name": "Sekadau",
+    "type": "Kabupaten",
+    "lat": 0.03485,
+    "lon": 110.95066,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 23.0
+  },
+  {
+    "id": "6110",
+    "name": "Melawi",
+    "type": "Kabupaten",
+    "lat": -0.33617,
+    "lon": 111.698,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 31.0
+  },
+  {
+    "id": "6111",
+    "name": "Kayong Utara",
+    "type": "Kabupaten",
+    "lat": -1.43711,
+    "lon": 110.79781,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 131.0
+  },
+  {
+    "id": "6112",
+    "name": "Kubu Raya",
+    "type": "Kabupaten",
+    "lat": 0.01637,
+    "lon": 109.33731,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 5.0
+  },
+  {
+    "id": "6171",
+    "name": "Pontianak",
+    "type": "Kota",
+    "lat": -0.08333,
+    "lon": 109.36667,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 2.0
+  },
+  {
+    "id": "6172",
+    "name": "Singkawang",
+    "type": "Kota",
+    "lat": 0.90734,
+    "lon": 109.00103,
+    "province": "Kalimantan Barat",
+    "province_id": "61",
+    "elevation_m": 3.0
+  },
+  {
+    "id": "6201",
+    "name": "Kotawaringin Barat",
+    "type": "Kabupaten",
+    "lat": -2.4,
+    "lon": 111.73333,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 27.0
+  },
+  {
+    "id": "6202",
+    "name": "Kotawaringin Timur",
+    "type": "Kabupaten",
+    "lat": -2.08333,
+    "lon": 112.75,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 15.0
+  },
+  {
+    "id": "6203",
+    "name": "Kapuas",
+    "type": "Kabupaten",
+    "lat": -2.01667,
+    "lon": 114.38333,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 25.0
+  },
+  {
+    "id": "6204",
+    "name": "Barito Selatan",
+    "type": "Kabupaten",
+    "lat": -1.86667,
+    "lon": 114.73333,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 23.0
+  },
+  {
+    "id": "6205",
+    "name": "Barito Utara",
+    "type": "Kabupaten",
+    "lat": -0.98333,
+    "lon": 115.1,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 60.0
+  },
+  {
+    "id": "6206",
+    "name": "Sukamara",
+    "type": "Kabupaten",
+    "lat": -2.62675,
+    "lon": 111.23681,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 20.0
+  },
+  {
+    "id": "6207",
+    "name": "Lamandau",
+    "type": "Kabupaten",
+    "lat": -1.83828,
+    "lon": 111.2869,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 304.0
+  },
+  {
+    "id": "6208",
+    "name": "Seruyan",
+    "type": "Kabupaten",
+    "lat": -2.33333,
+    "lon": 112.25,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 41.0
+  },
+  {
+    "id": "6209",
+    "name": "Katingan",
+    "type": "Kabupaten",
+    "lat": -2.06667,
+    "lon": 113.4,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 35.0
+  },
+  {
+    "id": "6210",
+    "name": "Pulang Pisau",
+    "type": "Kabupaten",
+    "lat": -3.11858,
+    "lon": 113.8623,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "6211",
+    "name": "Gunung Mas",
+    "type": "Kabupaten",
+    "lat": -0.95,
+    "lon": 113.5,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 96.0
+  },
+  {
+    "id": "6212",
+    "name": "Barito Timur",
+    "type": "Kabupaten",
+    "lat": -1.93333,
+    "lon": 115.1,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 31.0
+  },
+  {
+    "id": "6213",
+    "name": "Murung Raya",
+    "type": "Kabupaten",
+    "lat": -0.01667,
+    "lon": 114.26667,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 485.0
+  },
+  {
+    "id": "6271",
+    "name": "Palangka Raya",
+    "type": "Kota",
+    "lat": -1.76979,
+    "lon": 113.73126,
+    "province": "Kalimantan Tengah",
+    "province_id": "62",
+    "elevation_m": 31.0
+  },
+  {
+    "id": "6301",
+    "name": "Tanah Laut",
+    "type": "Kabupaten",
+    "lat": -3.88333,
+    "lon": 114.86667,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 129.0
+  },
+  {
+    "id": "6302",
+    "name": "Kota Baru",
+    "type": "Kabupaten",
+    "lat": -3,
+    "lon": 116,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 13.0
+  },
+  {
+    "id": "6303",
+    "name": "Banjar",
+    "type": "Kabupaten",
+    "lat": -3.31667,
+    "lon": 115.08333,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 28.0
+  },
+  {
+    "id": "6304",
+    "name": "Barito Kuala",
+    "type": "Kabupaten",
+    "lat": -3.08333,
+    "lon": 114.61667,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "6305",
+    "name": "Tapin",
+    "type": "Kabupaten",
+    "lat": -2.91667,
+    "lon": 115.03333,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 5.0
+  },
+  {
+    "id": "6306",
+    "name": "Hulu Sungai Selatan",
+    "type": "Kabupaten",
+    "lat": -2.75,
+    "lon": 115.2,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 11.0
+  },
+  {
+    "id": "6307",
+    "name": "Hulu Sungai Tengah",
+    "type": "Kabupaten",
+    "lat": -2.61667,
+    "lon": 115.41667,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 28.0
+  },
+  {
+    "id": "6308",
+    "name": "Hulu Sungai Utara",
+    "type": "Kabupaten",
+    "lat": -2.45,
+    "lon": 115.13333,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 4.0
+  },
+  {
+    "id": "6309",
+    "name": "Tabalong",
+    "type": "Kabupaten",
+    "lat": -1.88333,
+    "lon": 115.5,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 142.0
+  },
+  {
+    "id": "6310",
+    "name": "Tanah Bumbu",
+    "type": "Kabupaten",
+    "lat": -3.45413,
+    "lon": 115.70372,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 24.0
+  },
+  {
+    "id": "6311",
+    "name": "Balangan",
+    "type": "Kabupaten",
+    "lat": -2.32314,
+    "lon": 115.62922,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 58.0
+  },
+  {
+    "id": "6371",
+    "name": "Banjarmasin",
+    "type": "Kota",
+    "lat": -3.32444,
+    "lon": 114.59102,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 8.0
+  },
+  {
+    "id": "6372",
+    "name": "Banjar Baru",
+    "type": "Kota",
+    "lat": -3.41667,
+    "lon": 114.83333,
+    "province": "Kalimantan Selatan",
+    "province_id": "63",
+    "elevation_m": 6.0
+  },
+  {
+    "id": "6401",
+    "name": "Paser",
+    "type": "Kabupaten",
+    "lat": -1.43517,
+    "lon": 116.23535,
+    "province": "Kalimantan Timur",
+    "province_id": "64",
+    "elevation_m": 39.0
+  },
+  {
+    "id": "6402",
+    "name": "Kutai Barat",
+    "type": "Kabupaten",
+    "lat": -0.59417,
+    "lon": 115.51575,
+    "province": "Kalimantan Timur",
+    "province_id": "64",
+    "elevation_m": 39.0
+  },
+  {
+    "id": "6403",
+    "name": "Kutai Kartanegara",
+    "type": "Kabupaten",
+    "lat": -0.44019,
+    "lon": 116.98139,
+    "province": "Kalimantan Timur",
+    "province_id": "64",
+    "elevation_m": 20.0
+  },
+  {
+    "id": "6404",
+    "name": "Kutai Timur",
+    "type": "Kabupaten",
+    "lat": 1.03769,
+    "lon": 117.83112,
+    "province": "Kalimantan Timur",
+    "province_id": "64",
+    "elevation_m": 21.0
+  },
+  {
+    "id": "6405",
+    "name": "Berau",
+    "type": "Kabupaten",
+    "lat": 2,
+    "lon": 117.3,
+    "province": "Kalimantan Timur",
+    "province_id": "64",
+    "elevation_m": 35.0
+  },
+  {
+    "id": "6409",
+    "name": "Penajam Paser Utara",
+    "type": "Kabupaten",
+    "lat": -1.25,
+    "lon": 116.83333,
+    "province": "Kalimantan Timur",
+    "province_id": "64",
+    "elevation_m": 52.0
+  },
+  {
+    "id": "6411",
+    "name": "Mahakam Hulu",
+    "type": "Kabupaten",
+    "lat": 0.37822,
+    "lon": 115.38048,
+    "province": "Kalimantan Timur",
+    "province_id": "64",
+    "elevation_m": 92.0
+  },
+  {
+    "id": "6471",
+    "name": "Balikpapan",
+    "type": "Kota",
+    "lat": -1.16667,
+    "lon": 116.88333,
+    "province": "Kalimantan Timur",
+    "province_id": "64",
+    "elevation_m": 45.0
+  },
+  {
+    "id": "6472",
+    "name": "Samarinda",
+    "type": "Kota",
+    "lat": -0.43333,
+    "lon": 117.18333,
+    "province": "Kalimantan Timur",
+    "province_id": "64",
+    "elevation_m": 9.0
+  },
+  {
+    "id": "6474",
+    "name": "Bontang",
+    "type": "Kota",
+    "lat": 0.12526,
+    "lon": 117.49603,
+    "province": "Kalimantan Timur",
+    "province_id": "64",
+    "elevation_m": 3.0
+  },
+  {
+    "id": "6501",
+    "name": "Malinau",
+    "type": "Kabupaten",
+    "lat": 2.45,
+    "lon": 115.68333,
+    "province": "Kalimantan Utara",
+    "province_id": "65",
+    "elevation_m": 947.0
+  },
+  {
+    "id": "6502",
+    "name": "Bulungan",
+    "type": "Kabupaten",
+    "lat": 3,
+    "lon": 117.16667,
+    "province": "Kalimantan Utara",
+    "province_id": "65",
+    "elevation_m": 151.0
+  },
+  {
+    "id": "6503",
+    "name": "Tana Tidung",
+    "type": "Kabupaten",
+    "lat": 3.55,
+    "lon": 117.25,
+    "province": "Kalimantan Utara",
+    "province_id": "65",
+    "elevation_m": 28.0
+  },
+  {
+    "id": "6504",
+    "name": "Nunukan",
+    "type": "Kabupaten",
+    "lat": 4.13333,
+    "lon": 116.7,
+    "province": "Kalimantan Utara",
+    "province_id": "65",
+    "elevation_m": 514.0
+  },
+  {
+    "id": "6571",
+    "name": "Tarakan",
+    "type": "Kota",
+    "lat": 3.36667,
+    "lon": 117.6,
+    "province": "Kalimantan Utara",
+    "province_id": "65",
+    "elevation_m": 76.0
+  },
+  {
+    "id": "7101",
+    "name": "Bolaang Mongondow",
+    "type": "Kabupaten",
+    "lat": 0.75,
+    "lon": 124.08333,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 666.0
+  },
+  {
+    "id": "7102",
+    "name": "Minahasa",
+    "type": "Kabupaten",
+    "lat": 1.2537,
+    "lon": 124.83,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 864.0
+  },
+  {
+    "id": "7103",
+    "name": "Kepulauan Sangihe",
+    "type": "Kabupaten",
+    "lat": 3.5,
+    "lon": 125.55,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 520.0
+  },
+  {
+    "id": "7104",
+    "name": "Kepulauan Talaud",
+    "type": "Kabupaten",
+    "lat": 4.31178,
+    "lon": 126.78085,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 129.0
+  },
+  {
+    "id": "7105",
+    "name": "Minahasa Selatan",
+    "type": "Kabupaten",
+    "lat": 1.21291,
+    "lon": 124.59708,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 15.0
+  },
+  {
+    "id": "7106",
+    "name": "Minahasa Utara",
+    "type": "Kabupaten",
+    "lat": 1.4025,
+    "lon": 124.96,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 193.0
+  },
+  {
+    "id": "7107",
+    "name": "Bolaang Mongondow Utara",
+    "type": "Kabupaten",
+    "lat": 0.78527,
+    "lon": 123.41766,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 237.0
+  },
+  {
+    "id": "7108",
+    "name": "Siau Tagulandang Biaro",
+    "type": "Kabupaten",
+    "lat": 2.11728,
+    "lon": 125.37512,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 24.0
+  },
+  {
+    "id": "7109",
+    "name": "Minahasa Tenggara",
+    "type": "Kabupaten",
+    "lat": 1.05633,
+    "lon": 124.7925,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 399.0
+  },
+  {
+    "id": "7110",
+    "name": "Bolaang Mongondow Selatan",
+    "type": "Kabupaten",
+    "lat": 0.40912,
+    "lon": 123.75961,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 993.0
+  },
+  {
+    "id": "7111",
+    "name": "Bolaang Mongondow Timur",
+    "type": "Kabupaten",
+    "lat": 0.72073,
+    "lon": 124.50256,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 826.0
+  },
+  {
+    "id": "7171",
+    "name": "Manado",
+    "type": "Kota",
+    "lat": 1.51667,
+    "lon": 124.88333,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 67.0
+  },
+  {
+    "id": "7172",
+    "name": "Bitung",
+    "type": "Kota",
+    "lat": 1.48333,
+    "lon": 125.15,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 917.0
+  },
+  {
+    "id": "7173",
+    "name": "Tomohon",
+    "type": "Kota",
+    "lat": 1.31307,
+    "lon": 124.83404,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 758.0
+  },
+  {
+    "id": "7174",
+    "name": "Kotamobagu",
+    "type": "Kota",
+    "lat": 0.68915,
+    "lon": 124.32678,
+    "province": "Sulawesi Utara",
+    "province_id": "71",
+    "elevation_m": 250.0
+  },
+  {
+    "id": "7201",
+    "name": "Banggai Kepulauan",
+    "type": "Kabupaten",
+    "lat": -1.6424,
+    "lon": 123.54881,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 286.0
+  },
+  {
+    "id": "7202",
+    "name": "Banggai",
+    "type": "Kabupaten",
+    "lat": -1.2835,
+    "lon": 122.8892,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 737.0
+  },
+  {
+    "id": "7203",
+    "name": "Morowali",
+    "type": "Kabupaten",
+    "lat": -1.89342,
+    "lon": 121.25473,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 461.0
+  },
+  {
+    "id": "7204",
+    "name": "Poso",
+    "type": "Kabupaten",
+    "lat": -1.65,
+    "lon": 120.5,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 1485.0
+  },
+  {
+    "id": "7205",
+    "name": "Donggala",
+    "type": "Kabupaten",
+    "lat": -0.58333,
+    "lon": 119.85,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 166.0
+  },
+  {
+    "id": "7206",
+    "name": "Toli-Toli",
+    "type": "Kabupaten",
+    "lat": 1.30862,
+    "lon": 120.88643,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 22.0
+  },
+  {
+    "id": "7207",
+    "name": "Buol",
+    "type": "Kabupaten",
+    "lat": 0.75,
+    "lon": 120.75,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 95.0
+  },
+  {
+    "id": "7208",
+    "name": "Parigi Moutong",
+    "type": "Kabupaten",
+    "lat": 0.3368,
+    "lon": 120.17841,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 575.0
+  },
+  {
+    "id": "7209",
+    "name": "Tojo Una-Una",
+    "type": "Kabupaten",
+    "lat": -1.2036,
+    "lon": 121.48201,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 1273.0
+  },
+  {
+    "id": "7210",
+    "name": "Sigi",
+    "type": "Kabupaten",
+    "lat": -1.385,
+    "lon": 119.96694,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 483.0
+  },
+  {
+    "id": "7211",
+    "name": "Banggai Laut",
+    "type": "Kabupaten",
+    "lat": -1.61841,
+    "lon": 123.49388,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 84.0
+  },
+  {
+    "id": "7212",
+    "name": "Morowali Utara",
+    "type": "Kabupaten",
+    "lat": -1.7207,
+    "lon": 121.24649,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 1243.0
+  },
+  {
+    "id": "7271",
+    "name": "Palu",
+    "type": "Kota",
+    "lat": -0.86972,
+    "lon": 119.9,
+    "province": "Sulawesi Tengah",
+    "province_id": "72",
+    "elevation_m": 183.0
+  },
+  {
+    "id": "7301",
+    "name": "Kepulauan Selayar",
+    "type": "Kabupaten",
+    "lat": -6.81667,
+    "lon": 120.8,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 21.0
+  },
+  {
+    "id": "7302",
+    "name": "Bulukumba",
+    "type": "Kabupaten",
+    "lat": -5.41667,
+    "lon": 120.23333,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 114.0
+  },
+  {
+    "id": "7303",
+    "name": "Bantaeng",
+    "type": "Kabupaten",
+    "lat": -5.48333,
+    "lon": 119.98333,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 314.0
+  },
+  {
+    "id": "7304",
+    "name": "Jeneponto",
+    "type": "Kabupaten",
+    "lat": -5.63333,
+    "lon": 119.73333,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 15.0
+  },
+  {
+    "id": "7305",
+    "name": "Takalar",
+    "type": "Kabupaten",
+    "lat": -5.41667,
+    "lon": 119.51667,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 26.0
+  },
+  {
+    "id": "7306",
+    "name": "Gowa",
+    "type": "Kabupaten",
+    "lat": -5.31667,
+    "lon": 119.75,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 920.0
+  },
+  {
+    "id": "7307",
+    "name": "Sinjai",
+    "type": "Kabupaten",
+    "lat": -5.21667,
+    "lon": 120.15,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 254.0
+  },
+  {
+    "id": "7308",
+    "name": "Maros",
+    "type": "Kabupaten",
+    "lat": -5.05,
+    "lon": 119.71667,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 63.0
+  },
+  {
+    "id": "7309",
+    "name": "Pangkajene Dan Kepulauan",
+    "type": "Kabupaten",
+    "lat": -4.7827,
+    "lon": 119.5506,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 5.0
+  },
+  {
+    "id": "7310",
+    "name": "Barru",
+    "type": "Kabupaten",
+    "lat": -4.43333,
+    "lon": 119.68333,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 225.0
+  },
+  {
+    "id": "7311",
+    "name": "Bone",
+    "type": "Kabupaten",
+    "lat": -4.7,
+    "lon": 120.13333,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 321.0
+  },
+  {
+    "id": "7312",
+    "name": "Soppeng",
+    "type": "Kabupaten",
+    "lat": -4.3842,
+    "lon": 119.89,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 155.0
+  },
+  {
+    "id": "7313",
+    "name": "Wajo",
+    "type": "Kabupaten",
+    "lat": -4,
+    "lon": 120.16667,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 33.0
+  },
+  {
+    "id": "7314",
+    "name": "Sidenreng Rappang",
+    "type": "Kabupaten",
+    "lat": -3.85,
+    "lon": 119.96667,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 31.0
+  },
+  {
+    "id": "7315",
+    "name": "Pinrang",
+    "type": "Kabupaten",
+    "lat": -3.61667,
+    "lon": 119.6,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 318.0
+  },
+  {
+    "id": "7316",
+    "name": "Enrekang",
+    "type": "Kabupaten",
+    "lat": -3.5,
+    "lon": 119.86667,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 933.0
+  },
+  {
+    "id": "7317",
+    "name": "Luwu",
+    "type": "Kabupaten",
+    "lat": -2.5577,
+    "lon": 121.3242,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 743.0
+  },
+  {
+    "id": "7318",
+    "name": "Tana Toraja",
+    "type": "Kabupaten",
+    "lat": -3.0024,
+    "lon": 119.79655,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 979.0
+  },
+  {
+    "id": "7322",
+    "name": "Luwu Utara",
+    "type": "Kabupaten",
+    "lat": -2.6,
+    "lon": 120.25,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 41.0
+  },
+  {
+    "id": "7325",
+    "name": "Luwu Timur",
+    "type": "Kabupaten",
+    "lat": -2.50957,
+    "lon": 120.3978,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 118.0
+  },
+  {
+    "id": "7326",
+    "name": "Toraja Utara",
+    "type": "Kabupaten",
+    "lat": -2.92738,
+    "lon": 119.79218,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 1146.0
+  },
+  {
+    "id": "7371",
+    "name": "Makassar",
+    "type": "Kota",
+    "lat": -5.15,
+    "lon": 119.45,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "7372",
+    "name": "Pare-Pare",
+    "type": "Kota",
+    "lat": -4.03333,
+    "lon": 119.65,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 39.0
+  },
+  {
+    "id": "7373",
+    "name": "Palopo",
+    "type": "Kota",
+    "lat": -2.97841,
+    "lon": 120.11078,
+    "province": "Sulawesi Selatan",
+    "province_id": "73",
+    "elevation_m": 927.0
+  },
+  {
+    "id": "7401",
+    "name": "Buton",
+    "type": "Kabupaten",
+    "lat": -5.31667,
+    "lon": 122.58333,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 170.0
+  },
+  {
+    "id": "7402",
+    "name": "Muna",
+    "type": "Kabupaten",
+    "lat": -4.96667,
+    "lon": 122.66667,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 194.0
+  },
+  {
+    "id": "7403",
+    "name": "Konawe",
+    "type": "Kabupaten",
+    "lat": -3.91717,
+    "lon": 122.08823,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 32.0
+  },
+  {
+    "id": "7404",
+    "name": "Kolaka",
+    "type": "Kabupaten",
+    "lat": -4.08333,
+    "lon": 121.66667,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 259.0
+  },
+  {
+    "id": "7405",
+    "name": "Konawe Selatan",
+    "type": "Kabupaten",
+    "lat": -4.19191,
+    "lon": 122.44854,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 223.0
+  },
+  {
+    "id": "7406",
+    "name": "Bombana",
+    "type": "Kabupaten",
+    "lat": -4.6257,
+    "lon": 121.81641,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 176.0
+  },
+  {
+    "id": "7407",
+    "name": "Wakatobi",
+    "type": "Kabupaten",
+    "lat": -5.31934,
+    "lon": 123.5948,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 101.0
+  },
+  {
+    "id": "7408",
+    "name": "Kolaka Utara",
+    "type": "Kabupaten",
+    "lat": -3.10452,
+    "lon": 121.12427,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 361.0
+  },
+  {
+    "id": "7409",
+    "name": "Buton Utara",
+    "type": "Kabupaten",
+    "lat": -5.01457,
+    "lon": 122.93015,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 220.0
+  },
+  {
+    "id": "7410",
+    "name": "Konawe Utara",
+    "type": "Kabupaten",
+    "lat": -3.41552,
+    "lon": 121.99081,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 248.0
+  },
+  {
+    "id": "7411",
+    "name": "Kolaka Timur",
+    "type": "Kabupaten",
+    "lat": -4.01807,
+    "lon": 121.86172,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 267.0
+  },
+  {
+    "id": "7412",
+    "name": "Konawe Kepulauan",
+    "type": "Kabupaten",
+    "lat": -4.11656,
+    "lon": 123.10181,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 599.0
+  },
+  {
+    "id": "7413",
+    "name": "Muna Barat",
+    "type": "Kabupaten",
+    "lat": -4.83333,
+    "lon": 122.48333,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 27.0
+  },
+  {
+    "id": "7414",
+    "name": "Buton Tengah",
+    "type": "Kabupaten",
+    "lat": -5.31667,
+    "lon": 122.33333,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 64.0
+  },
+  {
+    "id": "7415",
+    "name": "Buton Selatan",
+    "type": "Kabupaten",
+    "lat": -5.56667,
+    "lon": 122.7,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 152.0
+  },
+  {
+    "id": "7471",
+    "name": "Kendari",
+    "type": "Kota",
+    "lat": -3.98333,
+    "lon": 122.5,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 27.0
+  },
+  {
+    "id": "7472",
+    "name": "Baubau",
+    "type": "Kota",
+    "lat": -5.477,
+    "lon": 122.6166,
+    "province": "Sulawesi Tenggara",
+    "province_id": "74",
+    "elevation_m": 131.0
+  },
+  {
+    "id": "7501",
+    "name": "Boalemo",
+    "type": "Kabupaten",
+    "lat": 0.62689,
+    "lon": 122.3568,
+    "province": "Gorontalo",
+    "province_id": "75",
+    "elevation_m": 553.0
+  },
+  {
+    "id": "7502",
+    "name": "Gorontalo",
+    "type": "Kabupaten",
+    "lat": 0.5728,
+    "lon": 122.2337,
+    "province": "Gorontalo",
+    "province_id": "75",
+    "elevation_m": 852.0
+  },
+  {
+    "id": "7503",
+    "name": "Pohuwato",
+    "type": "Kabupaten",
+    "lat": 0.7098,
+    "lon": 121.59582,
+    "province": "Gorontalo",
+    "province_id": "75",
+    "elevation_m": 321.0
+  },
+  {
+    "id": "7504",
+    "name": "Bone Bolango",
+    "type": "Kabupaten",
+    "lat": 0.50296,
+    "lon": 123.27501,
+    "province": "Gorontalo",
+    "province_id": "75",
+    "elevation_m": 256.0
+  },
+  {
+    "id": "7505",
+    "name": "Gorontalo Utara",
+    "type": "Kabupaten",
+    "lat": 0.77,
+    "lon": 122.31667,
+    "province": "Gorontalo",
+    "province_id": "75",
+    "elevation_m": 167.0
+  },
+  {
+    "id": "7571",
+    "name": "Gorontalo",
+    "type": "Kota",
+    "lat": 0.53333,
+    "lon": 123.1,
+    "province": "Gorontalo",
+    "province_id": "75",
+    "elevation_m": 20.0
+  },
+  {
+    "id": "7601",
+    "name": "Majene",
+    "type": "Kabupaten",
+    "lat": -3.15,
+    "lon": 118.86667,
+    "province": "Sulawesi Barat",
+    "province_id": "76",
+    "elevation_m": 288.0
+  },
+  {
+    "id": "7602",
+    "name": "Polewali Mandar",
+    "type": "Kabupaten",
+    "lat": -3.3,
+    "lon": 119.16667,
+    "province": "Sulawesi Barat",
+    "province_id": "76",
+    "elevation_m": 232.0
+  },
+  {
+    "id": "7603",
+    "name": "Mamasa",
+    "type": "Kabupaten",
+    "lat": -2.96492,
+    "lon": 119.30631,
+    "province": "Sulawesi Barat",
+    "province_id": "76",
+    "elevation_m": 1421.0
+  },
+  {
+    "id": "7604",
+    "name": "Mamuju",
+    "type": "Kabupaten",
+    "lat": -2.5,
+    "lon": 119.41667,
+    "province": "Sulawesi Barat",
+    "province_id": "76",
+    "elevation_m": 823.0
+  },
+  {
+    "id": "7605",
+    "name": "Mamuju Utara",
+    "type": "Kabupaten",
+    "lat": -1.51639,
+    "lon": 119.42139,
+    "province": "Sulawesi Barat",
+    "province_id": "76",
+    "elevation_m": 27.0
+  },
+  {
+    "id": "7606",
+    "name": "Mamuju Tengah",
+    "type": "Kabupaten",
+    "lat": -2.8212,
+    "lon": 119.2662,
+    "province": "Sulawesi Barat",
+    "province_id": "76",
+    "elevation_m": 1702.0
+  },
+  {
+    "id": "8101",
+    "name": "Maluku Tenggara Barat",
+    "type": "Kabupaten",
+    "lat": -7.61186,
+    "lon": 131.38,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 28.0
+  },
+  {
+    "id": "8102",
+    "name": "Maluku Tenggara",
+    "type": "Kabupaten",
+    "lat": -5.75,
+    "lon": 132.73334,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 76.0
+  },
+  {
+    "id": "8103",
+    "name": "Maluku Tengah",
+    "type": "Kabupaten",
+    "lat": -3.29167,
+    "lon": 128.9675,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 10.0
+  },
+  {
+    "id": "8104",
+    "name": "Buru",
+    "type": "Kabupaten",
+    "lat": -3.32767,
+    "lon": 126.68413,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 546.0
+  },
+  {
+    "id": "8105",
+    "name": "Kepulauan Aru",
+    "type": "Kabupaten",
+    "lat": -6.17059,
+    "lon": 134.46991,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 50.0
+  },
+  {
+    "id": "8106",
+    "name": "Seram Bagian Barat",
+    "type": "Kabupaten",
+    "lat": -3.1027,
+    "lon": 128.42996,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 737.0
+  },
+  {
+    "id": "8107",
+    "name": "Seram Bagian Timur",
+    "type": "Kabupaten",
+    "lat": -3.39851,
+    "lon": 130.39166,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 272.0
+  },
+  {
+    "id": "8108",
+    "name": "Maluku Barat Daya",
+    "type": "Kabupaten",
+    "lat": -7.8296,
+    "lon": 126.17386,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 519.0
+  },
+  {
+    "id": "8109",
+    "name": "Buru Selatan",
+    "type": "Kabupaten",
+    "lat": -3.52187,
+    "lon": 126.59271,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 658.0
+  },
+  {
+    "id": "8171",
+    "name": "Ambon",
+    "type": "Kota",
+    "lat": -3.7,
+    "lon": 128.18333,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 11.0
+  },
+  {
+    "id": "8172",
+    "name": "Tual",
+    "type": "Kota",
+    "lat": -5.64301,
+    "lon": 132.74934,
+    "province": "Maluku",
+    "province_id": "81",
+    "elevation_m": 20.0
+  },
+  {
+    "id": "8201",
+    "name": "Halmahera Barat",
+    "type": "Kabupaten",
+    "lat": 1.41709,
+    "lon": 127.55264,
+    "province": "Maluku Utara",
+    "province_id": "82",
+    "elevation_m": 190.0
+  },
+  {
+    "id": "8202",
+    "name": "Halmahera Tengah",
+    "type": "Kabupaten",
+    "lat": 0.48056,
+    "lon": 128.25,
+    "province": "Maluku Utara",
+    "province_id": "82",
+    "elevation_m": 157.0
+  },
+  {
+    "id": "8203",
+    "name": "Kepulauan Sula",
+    "type": "Kabupaten",
+    "lat": -1.8646,
+    "lon": 125.69046,
+    "province": "Maluku Utara",
+    "province_id": "82",
+    "elevation_m": 308.0
+  },
+  {
+    "id": "8204",
+    "name": "Halmahera Selatan",
+    "type": "Kabupaten",
+    "lat": -0.3955,
+    "lon": 127.90833,
+    "province": "Maluku Utara",
+    "province_id": "82",
+    "elevation_m": 207.0
+  },
+  {
+    "id": "8205",
+    "name": "Halmahera Utara",
+    "type": "Kabupaten",
+    "lat": 1.73194,
+    "lon": 128.00778,
+    "province": "Maluku Utara",
+    "province_id": "82",
+    "elevation_m": 10.0
+  },
+  {
+    "id": "8206",
+    "name": "Halmahera Timur",
+    "type": "Kabupaten",
+    "lat": 1.33517,
+    "lon": 128.48627,
+    "province": "Maluku Utara",
+    "province_id": "82",
+    "elevation_m": 909.0
+  },
+  {
+    "id": "8207",
+    "name": "Pulau Morotai",
+    "type": "Kabupaten",
+    "lat": 2.19924,
+    "lon": 128.40546,
+    "province": "Maluku Utara",
+    "province_id": "82",
+    "elevation_m": 668.0
+  },
+  {
+    "id": "8208",
+    "name": "Pulau Taliabu",
+    "type": "Kabupaten",
+    "lat": -1.84578,
+    "lon": 124.78992,
+    "province": "Maluku Utara",
+    "province_id": "82",
+    "elevation_m": 227.0
+  },
+  {
+    "id": "8271",
+    "name": "Ternate",
+    "type": "Kota",
+    "lat": 0.89618,
+    "lon": 127.31016,
+    "province": "Maluku Utara",
+    "province_id": "82",
+    "elevation_m": 306.0
+  },
+  {
+    "id": "8272",
+    "name": "Tidore Kepulauan",
+    "type": "Kota",
+    "lat": 0.60962,
+    "lon": 127.56981,
+    "province": "Maluku Utara",
+    "province_id": "82",
+    "elevation_m": 114.0
+  },
+  {
+    "id": "9101",
+    "name": "Fak-Fak",
+    "type": "Kabupaten",
+    "lat": -2.92641,
+    "lon": 132.29608,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 112.0
+  },
+  {
+    "id": "9102",
+    "name": "Kaimana",
+    "type": "Kabupaten",
+    "lat": -3.66093,
+    "lon": 133.77451,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 208.0
+  },
+  {
+    "id": "9103",
+    "name": "Teluk Wondama",
+    "type": "Kabupaten",
+    "lat": -2.7,
+    "lon": 134.5,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 9.0
+  },
+  {
+    "id": "9104",
+    "name": "Teluk Bintuni",
+    "type": "Kabupaten",
+    "lat": -1.88037,
+    "lon": 133.33105,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 51.0
+  },
+  {
+    "id": "9105",
+    "name": "Manokwari",
+    "type": "Kabupaten",
+    "lat": -0.9,
+    "lon": 133.75,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 277.0
+  },
+  {
+    "id": "9106",
+    "name": "Sorong Selatan",
+    "type": "Kabupaten",
+    "lat": -1.50495,
+    "lon": 132.28638,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 78.0
+  },
+  {
+    "id": "9107",
+    "name": "Sorong",
+    "type": "Kabupaten",
+    "lat": -1.16667,
+    "lon": 131.5,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 21.0
+  },
+  {
+    "id": "9108",
+    "name": "Raja Ampat",
+    "type": "Kabupaten",
+    "lat": -0.5,
+    "lon": 130,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 0.0
+  },
+  {
+    "id": "9109",
+    "name": "Tambrauw",
+    "type": "Kabupaten",
+    "lat": -0.60515,
+    "lon": 132.48962,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 726.0
+  },
+  {
+    "id": "9110",
+    "name": "Maybrat",
+    "type": "Kabupaten",
+    "lat": -1.2155,
+    "lon": 132.35092,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 500.0
+  },
+  {
+    "id": "9111",
+    "name": "Manokwari Selatan",
+    "type": "Kabupaten",
+    "lat": -1.0798,
+    "lon": 133.96729,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 1363.0
+  },
+  {
+    "id": "9112",
+    "name": "Pegunungan Arfak",
+    "type": "Kabupaten",
+    "lat": -0.93523,
+    "lon": 133.89587,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 144.0
+  },
+  {
+    "id": "9171",
+    "name": "Sorong",
+    "type": "Kota",
+    "lat": -0.86507,
+    "lon": 131.25153,
+    "province": "Papua Barat",
+    "province_id": "91",
+    "elevation_m": 7.0
+  },
+  {
+    "id": "9401",
+    "name": "Merauke",
+    "type": "Kabupaten",
+    "lat": -7.66667,
+    "lon": 139.66667,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 8.0
+  },
+  {
+    "id": "9402",
+    "name": "Jayawijaya",
+    "type": "Kabupaten",
+    "lat": -4.08333,
+    "lon": 139.08333,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 2271.0
+  },
+  {
+    "id": "9403",
+    "name": "Jayapura",
+    "type": "Kabupaten",
+    "lat": -3,
+    "lon": 139.95,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 255.0
+  },
+  {
+    "id": "9404",
+    "name": "Nabire",
+    "type": "Kabupaten",
+    "lat": -3.54016,
+    "lon": 135.55511,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 112.0
+  },
+  {
+    "id": "9408",
+    "name": "Kepulauan Yapen",
+    "type": "Kabupaten",
+    "lat": -1.78773,
+    "lon": 136.27716,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 672.0
+  },
+  {
+    "id": "9409",
+    "name": "Biak Numfor",
+    "type": "Kabupaten",
+    "lat": -1.03333,
+    "lon": 136,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 119.0
+  },
+  {
+    "id": "9410",
+    "name": "Paniai",
+    "type": "Kabupaten",
+    "lat": -3.9,
+    "lon": 136.60001,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 2492.0
+  },
+  {
+    "id": "9411",
+    "name": "Puncak Jaya",
+    "type": "Kabupaten",
+    "lat": -3.67241,
+    "lon": 137.43896,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 593.0
+  },
+  {
+    "id": "9412",
+    "name": "Mimika",
+    "type": "Kabupaten",
+    "lat": -4.54357,
+    "lon": 136.56555,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 26.0
+  },
+  {
+    "id": "9413",
+    "name": "Boven Digoel",
+    "type": "Kabupaten",
+    "lat": -5.70519,
+    "lon": 140.36349,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 57.0
+  },
+  {
+    "id": "9414",
+    "name": "Mappi",
+    "type": "Kabupaten",
+    "lat": -6.49971,
+    "lon": 139.34441,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 5.0
+  },
+  {
+    "id": "9415",
+    "name": "Asmat",
+    "type": "Kabupaten",
+    "lat": -5.3795,
+    "lon": 138.46344,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 22.0
+  },
+  {
+    "id": "9416",
+    "name": "Yahukimo",
+    "type": "Kabupaten",
+    "lat": -4.60403,
+    "lon": 139.58405,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 1023.0
+  },
+  {
+    "id": "9417",
+    "name": "Pegunungan Bintang",
+    "type": "Kabupaten",
+    "lat": -4.52167,
+    "lon": 140.29541,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 2575.0
+  },
+  {
+    "id": "9418",
+    "name": "Tolikara",
+    "type": "Kabupaten",
+    "lat": -3.42661,
+    "lon": 137.41699,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 389.0
+  },
+  {
+    "id": "9419",
+    "name": "Sarmi",
+    "type": "Kabupaten",
+    "lat": -2.41667,
+    "lon": 139.08333,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 106.0
+  },
+  {
+    "id": "9420",
+    "name": "Keerom",
+    "type": "Kabupaten",
+    "lat": -3.3,
+    "lon": 140.61667,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 285.0
+  },
+  {
+    "id": "9426",
+    "name": "Waropen",
+    "type": "Kabupaten",
+    "lat": -2.286,
+    "lon": 137.01837,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 44.0
+  },
+  {
+    "id": "9427",
+    "name": "Supiori",
+    "type": "Kabupaten",
+    "lat": -0.73881,
+    "lon": 135.61111,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 164.0
+  },
+  {
+    "id": "9428",
+    "name": "Mamberamo Raya",
+    "type": "Kabupaten",
+    "lat": -2.23561,
+    "lon": 137.78229,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 194.0
+  },
+  {
+    "id": "9429",
+    "name": "Nduga",
+    "type": "Kabupaten",
+    "lat": -4.45093,
+    "lon": 138.10089,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 768.0
+  },
+  {
+    "id": "9430",
+    "name": "Lanny Jaya",
+    "type": "Kabupaten",
+    "lat": -3.91244,
+    "lon": 138.28766,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 2587.0
+  },
+  {
+    "id": "9431",
+    "name": "Mamberamo Tengah",
+    "type": "Kabupaten",
+    "lat": -2.46064,
+    "lon": 138.45245,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 1067.0
+  },
+  {
+    "id": "9432",
+    "name": "Yalimo",
+    "type": "Kabupaten",
+    "lat": -3.86037,
+    "lon": 138.47305,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 3567.0
+  },
+  {
+    "id": "9433",
+    "name": "Puncak",
+    "type": "Kabupaten",
+    "lat": -4.14204,
+    "lon": 137.09702,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 2111.0
+  },
+  {
+    "id": "9434",
+    "name": "Dogiyai",
+    "type": "Kabupaten",
+    "lat": -4.03186,
+    "lon": 135.43945,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 1528.0
+  },
+  {
+    "id": "9435",
+    "name": "Intan Jaya",
+    "type": "Kabupaten",
+    "lat": -3.41016,
+    "lon": 136.70837,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 980.0
+  },
+  {
+    "id": "9436",
+    "name": "Deiyai",
+    "type": "Kabupaten",
+    "lat": -3.94737,
+    "lon": 135.95032,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 1539.0
+  },
+  {
+    "id": "9471",
+    "name": "Jayapura",
+    "type": "Kota",
+    "lat": -2.64647,
+    "lon": 140.77779,
+    "province": "Papua",
+    "province_id": "94",
+    "elevation_m": 6.0
+  }
+]
