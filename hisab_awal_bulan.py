@@ -2,6 +2,7 @@ import math
 import sys
 import os
 import json
+import textwrap
 from datetime import datetime, timedelta
 
 # Append path to ensure modules are found
@@ -260,7 +261,6 @@ def get_conjunction(jd_start):
     
     target_jd = None
     # Scan with 2-hour steps over 4 days = 48 iterations
-    # Scan with 2-hour steps over 4 days = 48 iterations
     # OPTIMASI: Use apparent=False for fast scanning
     for _ in range(48):
         current_jd += 2/24.0  # 2 hour steps
@@ -277,7 +277,6 @@ def get_conjunction(jd_start):
                 if abs(f1 - f0) < 1e-10:
                     break
                 # Secant: x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
-                x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
                 x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
                 f_new = get_diff(x_new, apparent=True) # Full precision for refinement
                 
@@ -328,7 +327,6 @@ def find_moonset(jd_sunset, lat, lon, alt_m=10):
             for _ in range(8):
                 if abs(f1 - f0) < 1e-10:
                     break
-                x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
                 x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
                 f_new = get_alt(x_new, apparent=True) # Full precision for refinement
                 x0, f0 = x1, f1
@@ -547,33 +545,16 @@ def draw_ascii_hilal(data_list):
         status_c = Color.GREEN if d['conclusion'] == "IMKAN RUKYAT" else (Color.YELLOW if "ISTIKMAL" in d['conclusion'] else Color.RED)
         infos.append({
             'status_str': f"Status: {status_c}{d['conclusion']}{Color.RESET}",
-            'pos_str': f"Alt: {Color.GREEN}{d['alt']:5.2f}\u00b0{Color.RESET} | Az M: {d['moon_az']:6.2f}\u00b0 | Az S: {d['sun_az']:6.2f}\u00b0",
-            'elong_str': f"Elong: {Color.YELLOW}{d['elong']:5.2f}\u00b0{Color.RESET} | Umur: {d['age']:5.2f} jam",
+            'pos_str': f"Alt: {Color.GREEN}{d['alt']:5.2f}\\u00b0{Color.RESET} | Az M: {d['moon_az']:6.2f}\\u00b0 | Az S: {d['sun_az']:6.2f}\\u00b0",
+            'elong_str': f"Elong: {Color.YELLOW}{d['elong']:5.2f}\\u00b0{Color.RESET} | Umur: {d['age']:5.2f} jam",
             'time_str': f"Ghurub: {d['sunset_time']} | Moonset: {d['moonset_time']} {d['tz_label']}",
             'dist_str': f"S.Dist: {d['sun_dist']:6.4f} AU | M.Dist: {d['moon_dist']:6.0f} km"
         })
         
-    # Print Info Block
-    # Line 1: Status
-    line = ""
-    for info in infos:
-        clean_len = len(info['status_str']) - (len(Color.GREEN) + len(Color.RESET)) # Approx adjustment for ANSI
-        # Manual padding is safer than ljust with ANSI codes
-        # But for simplicity, let's just print left aligned in the 67 char block
-        # We'll rely on the fact the grids are 67 chars wide (cols=61 + 6 prefix)
-        # Actually cols=61, prefix=6 -> 67 chars.
-        
-        # We will just print them left aligned to the block
-        # To align properly with ANSI, it's tricky.
-        # Let's simple print them with enough spaces.
-        pass
-
-    # Better approach: Print lines
     for key in ['status_str', 'pos_str', 'elong_str', 'time_str', 'dist_str']:
         line_str = ""
         for i, info in enumerate(infos):
             # We need to pad visual length to 67
-            # Strip ansi for calculations
             text = info[key]
             # Simple approach: just assume it fits or use fixed spacing if 1 grid
             if i < len(infos) - 1:
@@ -634,6 +615,91 @@ def draw_ascii_hilal(data_list):
         print(f"{Color.RED}{Color.BOLD}>>> HASIL: Hilal TIDAK TERLIHAT pada Hari ke-29 -> ISTIKMAL <<<{Color.RESET}")
         print(f"{Color.RED}{Color.BOLD}>>> 1 {next_m_name} jatuh pada hari berikutnya (H+1) <<<{Color.RESET}")
 
+def calculate_night_single(jd_target_sunset, jd_conj, ijtima_str, lat, lon, alt_m, tz_offset, tz_label, label_prefix="", month_idx=0):
+    # Convert JD to historical date string
+    jdn_sunset = math.floor(jd_target_sunset + 0.5)
+    
+    # Time part in local TZ
+    jd_local = jd_target_sunset + tz_offset/24.0
+    f_local = (jd_local + 0.5 - math.floor(jd_local + 0.5)) * 24.0
+    h_local = int(f_local)
+    m_local = int((f_local - h_local) * 60)
+    s_local = int(round(((f_local - h_local) * 60 - m_local) * 60))
+    if s_local == 60:
+        m_local += 1
+        s_local = 0
+    if m_local == 60:
+        h_local += 1
+        m_local = 0
+        
+    sunset_str = f"{jdn_to_historical_str(jdn_sunset, False)} {h_local:02d}:{m_local:02d}:{s_local:02d}"
+
+    age_hours = (jd_target_sunset - jd_conj) * 24.0
+    ijtima_after_sunset = (jd_conj > jd_target_sunset)
+    
+    # Calculation logic
+    sun_pos = VSOP87D_Sun.get_sun_position("VSOP87D.ear", jd_target_sunset + get_delta_t(jd_target_sunset)/86400.0)
+    ra_sun, dec_sun = EarthRotation.ecliptic_to_equatorial(sun_pos['lon'], sun_pos['lat'], jd_target_sunset)
+    topo_sun = EarthRotation.to_topocentric(ra_sun, dec_sun, jd_target_sunset, lat, lon, alt_obs_m=alt_m)
+    moon_geo = elp.calculate(jd_target_sunset + get_delta_t(jd_target_sunset)/86400.0)
+    moon_res = elp.calculate_topocentric(jd_target_sunset, lat, lon, alt_obs_m=alt_m, delta_t_sec=get_delta_t(jd_target_sunset))
+
+    cos_elong = (math.sin(moon_geo['lat_rad'])*math.sin(sun_pos['lat']) + 
+                 math.cos(moon_geo['lat_rad'])*math.cos(sun_pos['lat'])*math.cos(moon_geo['lon_rad'] - sun_pos['lon']))
+    elong = math.degrees(math.acos(max(-1.0, min(1.0, cos_elong))))
+
+    if ijtima_after_sunset:
+        status, conclusion, trigger_h1 = "BELUM IJTIMA", "MUSTAHIL", True
+    elif moon_res['alt_apparent'] < 0:
+        status, conclusion, trigger_h1 = "BELUM UFUK", "MUSTAHIL", True
+    else:
+        status, trigger_h1 = "SUDAH UFUK", False
+        mabims_met = (moon_res['alt_apparent'] >= 3.0) and (elong >= 6.4)
+        conclusion = "IMKAN RUKYAT" if mabims_met else "ISTIKMAL (30)"
+
+    res_data = {
+        'month_idx': month_idx,
+        'label_prefix': label_prefix,
+        'ijtima_str': ijtima_str,
+        'sunset_str': sunset_str,
+        'h_local': h_local, 'm_local': m_local,
+        'age': age_hours,
+        'alt': moon_res['alt_apparent'],
+        'elong': elong,
+        'status': status,
+        'conclusion': conclusion,
+        'moon_az': moon_res['az_deg'],
+        'sun_az': topo_sun['azimuth'],
+        'sun_dist': sun_pos['range'],
+        'moon_dist': moon_geo['dist_km'],
+        'lat': lat, 'lon': lon, 'tz_label': tz_label, 'tz_offset': tz_offset,
+        'jdn_sunset': jdn_sunset,
+        'jd_target_sunset': jd_target_sunset
+    }
+    
+    # Calculate estimates
+    if "(H+1)" not in label_prefix:
+        days_to_add = 1 if conclusion == "IMKAN RUKYAT" else 2
+        est_jdn = jdn_sunset + days_to_add
+        res_data['est_date'] = jdn_to_historical_str(est_jdn)
+        res_data['est_jdn'] = est_jdn
+    else:
+        est_jdn = jdn_sunset + 1
+        res_data['est_date'] = jdn_to_historical_str(est_jdn)
+        res_data['est_jdn'] = est_jdn
+        
+    # Calculate moonset
+    jd_moonset = find_moonset(jd_target_sunset, lat, lon, alt_m)
+    if jd_moonset:
+        jd_ms_local = jd_moonset + tz_offset/24.0
+        f_ms = (jd_ms_local + 0.5 - math.floor(jd_ms_local + 0.5)) * 24.0
+        res_data['moonset_time'] = f"{int(f_ms):02d}:{int((f_ms-int(f_ms))*60):02d}"
+    else:
+        res_data['moonset_time'] = "--:--"
+    
+    res_data['trigger_h1'] = trigger_h1
+    return res_data
+
 def run_hisab(hijri_year, lat, lon, alt_m, location_name, province_name=""):
     tz_offset, tz_label = get_political_tz(province_name, lon)
     
@@ -646,126 +712,7 @@ def run_hisab(hijri_year, lat, lon, alt_m, location_name, province_name=""):
     print(f"{Color.GRAY}" + "-" * 155 + f"{Color.RESET}")
     
     monthly_results = []
-
-    def calculate_night(jd_target_sunset, jd_conj, ijtima_str, label_prefix="", month_idx=0):
-        # Convert JD to historical date string
-        jdn_sunset = math.floor(jd_target_sunset + 0.5)
-        
-        # Time part in local TZ
-        jd_local = jd_target_sunset + tz_offset/24.0
-        f_local = (jd_local + 0.5 - math.floor(jd_local + 0.5)) * 24.0
-        h_local = int(f_local)
-        m_local = int((f_local - h_local) * 60)
-        s_local = int(round(((f_local - h_local) * 60 - m_local) * 60))
-        if s_local == 60:
-            m_local += 1
-            s_local = 0
-        if m_local == 60:
-            h_local += 1
-            m_local = 0
-            
-        sunset_str = f"{jdn_to_historical_str(jdn_sunset, False)} {h_local:02d}:{m_local:02d}:{s_local:02d}"
-
-        age_hours = (jd_target_sunset - jd_conj) * 24.0
-        ijtima_after_sunset = (jd_conj > jd_target_sunset)
-        
-        # Calculation logic
-        sun_pos = VSOP87D_Sun.get_sun_position("VSOP87D.ear", jd_target_sunset + get_delta_t(jd_target_sunset)/86400.0)
-        ra_sun, dec_sun = EarthRotation.ecliptic_to_equatorial(sun_pos['lon'], sun_pos['lat'], jd_target_sunset)
-        topo_sun = EarthRotation.to_topocentric(ra_sun, dec_sun, jd_target_sunset, lat, lon, alt_obs_m=alt_m)
-        moon_geo = elp.calculate(jd_target_sunset + get_delta_t(jd_target_sunset)/86400.0)
-        moon_res = elp.calculate_topocentric(jd_target_sunset, lat, lon, alt_obs_m=alt_m, delta_t_sec=get_delta_t(jd_target_sunset))
-
-        cos_elong = (math.sin(moon_geo['lat_rad'])*math.sin(sun_pos['lat']) + 
-                     math.cos(moon_geo['lat_rad'])*math.cos(sun_pos['lat'])*math.cos(moon_geo['lon_rad'] - sun_pos['lon']))
-        elong = math.degrees(math.acos(max(-1.0, min(1.0, cos_elong))))
-
-        if ijtima_after_sunset:
-            status, conclusion, trigger_h1 = "BELUM IJTIMA", "MUSTAHIL", True
-        elif moon_res['alt_apparent'] < 0:
-            status, conclusion, trigger_h1 = "BELUM UFUK", "MUSTAHIL", True
-        else:
-            status, trigger_h1 = "SUDAH UFUK", False
-            mabims_met = (moon_res['alt_apparent'] >= 3.0) and (elong >= 6.4)
-            conclusion = "IMKAN RUKYAT" if mabims_met else "ISTIKMAL (30)"
-
-        # Colorize result
-        c_alt = Color.GREEN if moon_res['alt_apparent'] >= 3.0 else (Color.YELLOW if moon_res['alt_apparent'] >= 0 else Color.RED)
-        c_elong = Color.GREEN if elong >= 6.4 else Color.YELLOW
-        c_conclusion = Color.GREEN if conclusion == "IMKAN RUKYAT" else (Color.YELLOW if "ISTIKMAL" in conclusion else Color.RED)
-
-        # Number or H+1
-        lbl_num = f"{month_idx+1:2}" if "(H+1)" not in label_prefix else "  "
-        
-        row = (f"{lbl_num} | {label_prefix:<15} | {ijtima_str:<19} | {sunset_str:<19} | "
-               f"{age_hours:<8.2f} j | {c_alt}{moon_res['alt_apparent']:<6.2f}\u00b0{Color.RESET} | "
-               f"{c_elong}{elong:<6.2f}\u00b0{Color.RESET} | {status:<15} | {c_conclusion}{Color.BOLD}{conclusion}{Color.RESET}")
-        print(row)
-        
-        if "(H+1)" not in label_prefix:
-            # Estimate 1st day of month
-            days_to_add = 1 if conclusion == "IMKAN RUKYAT" else 2
-            est_jdn = jdn_sunset + days_to_add
-            est_date_str = jdn_to_historical_str(est_jdn)
-
-            jd_moonset = find_moonset(jd_target_sunset, lat, lon, alt_m)
-            if jd_moonset:
-                jd_ms_local = jd_moonset + tz_offset/24.0
-                f_ms = (jd_ms_local + 0.5 - math.floor(jd_ms_local + 0.5)) * 24.0
-                ms_str = f"{int(f_ms):02d}:{int((f_ms-int(f_ms))*60):02d}"
-            else:
-                ms_str = "--:--"
-
-            res_data = {
-                'month': HIJRI_MONTH_NAMES[month_idx],
-                'greg_date': jdn_to_historical_str(jdn_sunset),
-                'alt': moon_res['alt_apparent'],
-                'moon_az': moon_res['az_deg'],
-                'sun_az': topo_sun['azimuth'],
-                'sunset_time': f"{h_local:02d}:{m_local:02d}",
-                'moonset_time': ms_str,
-                'tz_label': tz_label,
-                'est_date': est_date_str,
-                'sun_dist': sun_pos['range'],
-                'moon_dist': moon_geo['dist_km'],
-                'elong': elong,
-                'age': age_hours,
-                'conclusion': conclusion
-            }
-            monthly_results.append(res_data)
-            return trigger_h1, res_data
-            
-        else:
-            # Data for H+1
-            # For Day 30 (H+1), the next day is ALWAYS 1st of month
-            est_jdn_h1 = jdn_sunset + 1
-            est_date_str_h1 = jdn_to_historical_str(est_jdn_h1)
-            
-            jd_moonset = find_moonset(jd_target_sunset, lat, lon, alt_m)
-            if jd_moonset:
-                jd_ms_local = jd_moonset + tz_offset/24.0
-                f_ms = (jd_ms_local + 0.5 - math.floor(jd_ms_local + 0.5)) * 24.0
-                ms_str = f"{int(f_ms):02d}:{int((f_ms-int(f_ms))*60):02d}"
-            else:
-                ms_str = "--:--"
-
-            return trigger_h1, {
-                'month': HIJRI_MONTH_NAMES[month_idx],
-                'greg_date': jdn_to_historical_str(jdn_sunset),
-                'alt': moon_res['alt_apparent'],
-                'moon_az': moon_res['az_deg'],
-                'sun_az': topo_sun['azimuth'],
-                'sunset_time': f"{h_local:02d}:{m_local:02d}",
-                'moonset_time': ms_str,
-                'tz_label': tz_label,
-                'est_date': est_date_str_h1,
-                'sun_dist': sun_pos['range'],
-                'moon_dist': moon_geo['dist_km'],
-                'elong': elong,
-                'age': age_hours,
-                'conclusion': conclusion
-            }
-
+    
     for m in range(1, 13):
         # Anchor on Day 29 of previous month
         prev_m = m - 1
@@ -784,19 +731,155 @@ def run_hisab(hijri_year, lat, lon, alt_m, location_name, province_name=""):
 
         # Night 1: The day of Ijtima
         jd_sunset_1 = find_sunset(jd_ijtima, lat, lon, alt_m, tz_offset)
-        is_late, data_29 = calculate_night(jd_sunset_1, jd_ijtima, ijtima_str, HIJRI_MONTH_NAMES[m-1], m-1)
         
+        # Calculate Night 1
+        d1 = calculate_night_single(jd_sunset_1, jd_ijtima, ijtima_str, lat, lon, alt_m, tz_offset, tz_label, HIJRI_MONTH_NAMES[m-1], m-1)
+        
+        # Print Row 1
+        c_alt = Color.GREEN if d1['alt'] >= 3.0 else (Color.YELLOW if d1['alt'] >= 0 else Color.RED)
+        c_elong = Color.GREEN if d1['elong'] >= 6.4 else Color.YELLOW
+        c_conclusion = Color.GREEN if d1['conclusion'] == "IMKAN RUKYAT" else (Color.YELLOW if "ISTIKMAL" in d1['conclusion'] else Color.RED)
+        
+        lbl_num = f"{m:2}"
+        row = (f"{lbl_num} | {d1['label_prefix']:<15} | {d1['ijtima_str']:<19} | {d1['sunset_str']:<19} | "
+               f"{d1['age']:<8.2f} j | {c_alt}{d1['alt']:<6.2f}\u00b0{Color.RESET} | "
+               f"{c_elong}{d1['elong']:<6.2f}\u00b0{Color.RESET} | {d1['status']:<15} | {c_conclusion}{Color.BOLD}{d1['conclusion']}{Color.RESET}")
+        print(row)
+        
+        # Prepare result entry
+        res_entry = {
+            'month': HIJRI_MONTH_NAMES[m-1],
+            'greg_date': jdn_to_historical_str(d1['jdn_sunset']),
+            'alt': d1['alt'],
+            'moon_az': d1['moon_az'],
+            'sun_az': d1['sun_az'],
+            'sunset_time': f"{d1['h_local']:02d}:{d1['m_local']:02d}",
+            'moonset_time': d1['moonset_time'],
+            'tz_label': d1['tz_label'],
+            'est_date': d1['est_date'],
+            'sun_dist': d1['sun_dist'],
+            'moon_dist': d1['moon_dist'],
+            'elong': d1['elong'],
+            'age': d1['age'],
+            'conclusion': d1['conclusion']
+        }
+        monthly_results.append(res_entry)
+
         # If Ijtima was after sunset, check the next night too
-        if is_late:
+        if d1['trigger_h1']:
             jd_sunset_2 = jd_sunset_1 + 1.0
-            _, data_h1 = calculate_night(jd_sunset_2, jd_ijtima, ijtima_str, f"  (H+1)", m-1)
-            # Store data for side-by-side viz
-            if data_29:
-                data_29['h1_data'] = data_h1
+            d2 = calculate_night_single(jd_sunset_2, jd_ijtima, ijtima_str, lat, lon, alt_m, tz_offset, tz_label, f"  (H+1)", m-1)
+            
+            # Print Row 2 (H+1)
+            c_alt = Color.GREEN if d2['alt'] >= 3.0 else (Color.YELLOW if d2['alt'] >= 0 else Color.RED)
+            c_elong = Color.GREEN if d2['elong'] >= 6.4 else Color.YELLOW
+            c_conclusion = Color.GREEN if d2['conclusion'] == "IMKAN RUKYAT" else (Color.YELLOW if "ISTIKMAL" in d2['conclusion'] else Color.RED)
+            
+            row2 = (f"   | {d2['label_prefix']:<15} | {d2['ijtima_str']:<19} | {d2['sunset_str']:<19} | "
+                   f"{d2['age']:<8.2f} j | {c_alt}{d2['alt']:<6.2f}\u00b0{Color.RESET} | "
+                   f"{c_elong}{d2['elong']:<6.2f}\u00b0{Color.RESET} | {d2['status']:<15} | {c_conclusion}{Color.BOLD}{d2['conclusion']}{Color.RESET}")
+            print(row2)
+            
+            # Store H+1 data
+            data_h1 = {
+                'month': HIJRI_MONTH_NAMES[m-1],
+                'greg_date': jdn_to_historical_str(d2['jdn_sunset']),
+                'alt': d2['alt'],
+                'moon_az': d2['moon_az'],
+                'sun_az': d2['sun_az'],
+                'sunset_time': f"{d2['h_local']:02d}:{d2['m_local']:02d}",
+                'moonset_time': d2['moonset_time'],
+                'tz_label': d2['tz_label'],
+                'est_date': d2['est_date'],
+                'sun_dist': d2['sun_dist'],
+                'moon_dist': d2['moon_dist'],
+                'elong': d2['elong'],
+                'age': d2['age'],
+                'conclusion': d2['conclusion']
+            }
+            res_entry['h1_data'] = data_h1
             
         print() # Line break for readability
     
     return monthly_results
+
+def run_hisab_all_indonesia(hijri_year, month_int, cities):
+    m_idx = month_int - 1
+    m_name = HIJRI_MONTH_NAMES[m_idx]
+    
+    print(f"\n{Color.BLUE}{Color.BOLD}===== HISAB SELURUH KOTA/KAB INDONESIA: {m_name.upper()} {hijri_year} H ====={Color.RESET}")
+    # Determine next month name for header
+    next_m_idx = (m_idx + 1) % 12
+    next_m_name = HIJRI_MONTH_NAMES[next_m_idx]
+    col_date_header = f"1 {next_m_name}"
+
+    print(f"{Color.GRAY}" + "-" * 175 + f"{Color.RESET}") # Extended width
+    header = f"{'No':<4} | {'Kota/Kabupaten':<30} | {'Provinsi':<20} | {'Ijtima (Local)':<14} | {'Ghurub':<8} | {'Alt':<7} | {'Elong':<7} | {'Status':<15} | {'Kesimpulan':<15} | {col_date_header}"
+    print(f"{Color.BOLD}{header}{Color.RESET}")
+    print(f"{Color.GRAY}" + "-" * 175 + f"{Color.RESET}")
+    
+    # Calculate Ijtima (Global, but need anchor)
+    prev_m = month_int - 1
+    prev_y = hijri_year
+    if prev_m == 0:
+        prev_m = 12
+        prev_y -= 1
+        
+    jdn_29 = hijri_to_jdn(29, prev_m, prev_y)
+    jd_anchor = jdn_to_jd(jdn_29)
+    jd_ijtima = get_conjunction(jd_anchor)
+    
+    if not jd_ijtima:
+        print("Ijtima tidak ditemukan.")
+        return
+
+    days_id = ["Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
+
+    # Loop cities
+    for i, c in enumerate(cities):
+        city_name = f"{c['type']} {c['name']}"
+        prov_name = c['province']
+        lat = c['lat']
+        lon = c['lon']
+        alt_m = c['elevation_m'] if 'elevation_m' in c else 10
+        
+        tz_offset, tz_label = get_political_tz(prov_name, lon)
+        ijtima_str = jd_to_historical_time_str(jd_ijtima, tz_offset, tz_label)
+        ijtima_time = ijtima_str.split(' ')[1] if ' ' in ijtima_str else ijtima_str
+        
+        jd_sunset = find_sunset(jd_ijtima, lat, lon, alt_m, tz_offset)
+        d = calculate_night_single(jd_sunset, jd_ijtima, ijtima_str, lat, lon, alt_m, tz_offset, tz_label, m_name, m_idx)
+        
+        # Colorize
+        c_alt = Color.GREEN if d['alt'] >= 3.0 else (Color.YELLOW if d['alt'] >= 0 else Color.RED)
+        c_elong = Color.GREEN if d['elong'] >= 6.4 else Color.YELLOW
+        c_conclusion = Color.GREEN if d['conclusion'] == "IMKAN RUKYAT" else (Color.YELLOW if "ISTIKMAL" in d['conclusion'] else Color.RED)
+        
+        # Calculate full date string
+        est_jdn = d.get('est_jdn', 0)
+        day_idx = int((est_jdn + 1.5) % 7)
+        full_date = f"{days_id[day_idx]}, {d['est_date']}"
+
+        # Wrap Text
+        city_lines = textwrap.wrap(city_name, width=30)
+        prov_lines = textwrap.wrap(prov_name, width=20)
+        max_lines = max(len(city_lines), len(prov_lines))
+        
+        for j in range(max_lines):
+            c_txt = city_lines[j] if j < len(city_lines) else ""
+            p_txt = prov_lines[j] if j < len(prov_lines) else ""
+            
+            if j == 0:
+                row = (f"{i+1:<4} | {c_txt:<30} | {p_txt:<20} | {ijtima_time:<14} | {d['sunset_str'][-8:]:<8} | "
+                       f"{c_alt}{d['alt']:<6.2f}\u00b0{Color.RESET} | "
+                       f"{c_elong}{d['elong']:<6.2f}\u00b0{Color.RESET} | {d['status']:<15} | {c_conclusion}{Color.BOLD}{d['conclusion']:<15}{Color.RESET} | {full_date}")
+            else:
+                row = (f"{'':<4} | {c_txt:<30} | {p_txt:<20} | {'':<14} | {'':<8} | "
+                       f"{'':<7} | "
+                       f"{'':<7} | {'':<15} | {'':<15} | ")
+            print(row)
+    print(f"{Color.GRAY}" + "-" * 175 + f"{Color.RESET}")
+
 
 def load_data():
     with open('provinces.json', 'r') as f:
@@ -810,10 +893,7 @@ def print_grid(items, cols=3):
     if not items: return
     rows = math.ceil(len(items) / cols)
     
-    # Prepare the formatted strings (with index)
-    # items should be strings like " 1. Aceh"
-    
-    # Calculate max width for each column
+    # Max width
     max_len = max(len(s) for s in items) + 2
     
     for r in range(rows):
@@ -825,15 +905,19 @@ def print_grid(items, cols=3):
         print(line)
 
 def select_location(provinces, cities):
-    print("\n--- PILIH PROVINSI ---")
+    print(f"\n--- PILIH PROVINSI ---")
+    print(" 0. HISAB SELURUH KOTA/KAB INDONESIA") # Option 0
     prov_list = [f"{i+1:2}. {p['name']}" for i, p in enumerate(provinces)]
     print_grid(prov_list, cols=3)
     
-    choice = input("\nMasukkan nomor provinsi (atau 'keluar'): ").strip().lower()
+    choice = input(f"\nMasukkan nomor provinsi (0-34) (atau 'keluar'): ").strip().lower()
     if choice == 'keluar': return "EXIT"
     
     try:
-        idx = int(choice) - 1
+        idx = int(choice)
+        if idx == 0: return "ALL"
+        
+        idx -= 1
         if not (0 <= idx < len(provinces)): raise ValueError
         selected_prov = provinces[idx]['name']
     except (ValueError, IndexError):
@@ -851,7 +935,7 @@ def select_location(provinces, cities):
     loc_list = [f"{i+1:3}. {c['type'][:3]}. {c['name']}" for i, c in enumerate(filtered_locations)]
     print_grid(loc_list, cols=3 if len(loc_list) < 30 else 4)
     
-    choice = input("\nMasukkan nomor lokasi (atau 'kembali' / 'keluar'): ").strip().lower()
+    choice = input(f"\nMasukkan nomor lokasi (atau 'kembali' / 'keluar'): ").strip().lower()
     if choice == 'keluar': return "EXIT"
     if choice == 'kembali': return select_location(provinces, cities)
 
@@ -873,38 +957,53 @@ def main():
         loc = select_location(provinces, cities)
         if loc == "EXIT" or loc is None:
             if loc == "EXIT": break
-            continue # Try again if invalid or none picked
+            continue 
             
-        year_str = input(f"\nLokasi: {loc['type']} {loc['name']}, {loc['province']}\nMasukkan Tahun Hijriyah (e.g. 1447) atau 'keluar': ").strip().lower()
+        year_str = input(f"\nMasukkan Tahun Hijriyah (e.g. 1447) atau 'keluar': ").strip().lower()
         if year_str == 'keluar':
             break
             
         try:
             hijri_year = int(year_str)
-            results = run_hisab(hijri_year, loc['lat'], loc['lon'], loc['elevation_m'], f"{loc['type']} {loc['name']}", loc['province'])
-            
-            while True:
-                viz_choice = input("\nMasukkan nomor bulan untuk visualisasi ASCII (1-12) atau Enter untuk kembali: ").strip()
-                if not viz_choice: break
-                if viz_choice.lower() == 'keluar': return
-                
+            if loc == "ALL":
+                # Special flow for All Indonesia
+                print(f"\n--- PILIH BULAN ---")
+                month_list = [f"{i+1:2}. {n}" for i, n in enumerate(HIJRI_MONTH_NAMES)]
+                print_grid(month_list, cols=3)
+                m_choice = input(f"\nMasukkan nomor bulan (1-12): ").strip()
                 try:
-                    m_idx = int(viz_choice) - 1
-                    if 0 <= m_idx < len(results):
-                        res = results[m_idx]
-                        if 'h1_data' in res:
-                            draw_ascii_hilal([res, res['h1_data']])
-                        else:
-                            draw_ascii_hilal(res)
+                    m_int = int(m_choice)
+                    if 1 <= m_int <= 12:
+                         run_hisab_all_indonesia(hijri_year, m_int, cities)
                     else:
-                        print("Nomor bulan tidak valid (1-12).")
+                        print("Bulan tidak valid.")
                 except ValueError:
-                    print("Masukkan angka 1-12.")
+                    print("Input bulan salah.")
+                input(f"\nTekan Enter untuk kembali ke awal...")
+            else:
+                results = run_hisab(hijri_year, loc['lat'], loc['lon'], loc['elevation_m'], f"{loc['type']} {loc['name']}", loc['province'])
+                
+                while True:
+                    viz_choice = input(f"\nMasukkan nomor bulan untuk visualisasi ASCII (1-12) atau Enter untuk kembali: ").strip()
+                    if not viz_choice: break
+                    if viz_choice.lower() == 'keluar': return
+                    
+                    try:
+                        m_idx = int(viz_choice) - 1
+                        if 0 <= m_idx < len(results):
+                            res = results[m_idx]
+                            if 'h1_data' in res:
+                                draw_ascii_hilal([res, res['h1_data']])
+                            else:
+                                draw_ascii_hilal(res)
+                        else:
+                            print("Nomor bulan tidak valid (1-12).")
+                    except ValueError:
+                        print("Masukkan angka 1-12.")
                     
         except ValueError:
             print("Tahun tidak valid.")
-            
-        input("\nTekan Enter untuk kembali ke awal...")
+            input("Tekan Enter untuk kembali...")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
@@ -919,5 +1018,5 @@ if __name__ == "__main__":
         try:
             main()
         except KeyboardInterrupt:
-            print("\nProgram dihentikan.")
+            print(f"\nProgram dihentikan.")
             sys.exit(0)
