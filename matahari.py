@@ -27,7 +27,7 @@ class VSOP87D_Sun:
     _vsop_cache = {}  # Cache untuk data file yang sudah di-parse
 
     @classmethod
-    def get_sun_position(cls, filepath, jd, prec=0.0):
+    def get_sun_position(cls, filepath, jd, prec=0.0, apparent=False):
         """
         Menghitung posisi Matahari (Geosentrik) dari file Bumi (VSOP87D.ear).
 
@@ -52,6 +52,12 @@ class VSOP87D_Sun:
 
         # R tetap sama
         dist = r_earth[2]
+
+        if apparent:
+            # Apply Nutation and Aberration
+            d_psi, _ = EarthRotation.get_nutation(jd)
+            aber = EarthRotation.get_aberration_low_prec(dist)
+            lon_sun += math.radians(d_psi + aber)
 
         return {
             'lon': lon_sun,

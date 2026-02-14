@@ -23,6 +23,14 @@ class Color:
     BOLD = "\033[1m"
     RESET = "\033[0m"
 
+    @staticmethod
+    def rgb(r, g, b):
+        return f"\033[38;2;{r};{g};{b}m"
+
+    @staticmethod
+    def bg_rgb(r, g, b):
+        return f"\033[48;2;{r};{g};{b}m"
+
 # --- KUWAITI ALGORITHM (Ported from JS) ---
 
 HIJRI_EPOCH_JDN = 1948440
@@ -151,13 +159,24 @@ def get_political_tz(province_name, lon):
 
 def jd_to_historical_time_str(jd, tz_offset, tz_label):
     """Converts JD to a string with date and time using specific TZ."""
+    if jd is None: return "--"
+    
     jd_local = jd + tz_offset/24.0
     jdn_local = math.floor(jd_local + 0.5)
     f_local = (jd_local + 0.5 - jdn_local) * 24.0
-    hours = int(f_local)
-    minutes = int((f_local - hours) * 60)
     
-    return f"{jdn_to_historical_str(jdn_local, False)} {hours:02d}:{minutes:02d}"
+    # Precise hour/min/sec calculation
+    total_seconds = int(round(f_local * 3600))
+    hours = (total_seconds // 3600) % 24
+    minutes = (total_seconds // 60) % 60
+    seconds = total_seconds % 60
+    
+    # Handle JN rollover if hours reached 24 from rounding
+    if total_seconds >= 86400:
+        jdn_local += 1
+        hours = 0
+    
+    return f"{jdn_to_historical_str(jdn_local, False)} {hours:02d}:{minutes:02d}:{seconds:02d}"
 
 # --- ASTRONOMICAL ENGINE ---
 
@@ -224,12 +243,12 @@ def get_conjunction(jd_start):
     """
     delta_t_ref = get_delta_t(jd_start)
     
-    def get_diff(jd):
+    def get_diff(jd, apparent=True):
         dt = get_delta_t(jd)
-        # Sun position
-        sun = VSOP87D_Sun.get_sun_position("VSOP87D.ear", jd + dt/86400.0)
-        # Moon position (Geocentric Ecliptic)
-        moon = elp.calculate(jd + dt/86400.0)
+        # Sun position (Apparent)
+        sun = VSOP87D_Sun.get_sun_position("VSOP87D.ear", jd + dt/86400.0, apparent=apparent)
+        # Moon position (Geocentric Ecliptic Apparent)
+        moon = elp.calculate(jd + dt/86400.0, apparent=apparent)
         
         diff = (moon['lon_deg'] - sun['lon_deg']) % 360
         if diff > 180: diff -= 360
@@ -241,9 +260,11 @@ def get_conjunction(jd_start):
     
     target_jd = None
     # Scan with 2-hour steps over 4 days = 48 iterations
+    # Scan with 2-hour steps over 4 days = 48 iterations
+    # OPTIMASI: Use apparent=False for fast scanning
     for _ in range(48):
         current_jd += 2/24.0  # 2 hour steps
-        diff = get_diff(current_jd)
+        diff = get_diff(current_jd, apparent=False)
         if (prev_diff < 0 and diff >= 0) or (prev_diff > 0 and diff <= 0):
             # Zero crossing found! Gunakan Secant Method untuk converge lebih cepat
             x0 = current_jd - 2/24.0
@@ -257,7 +278,8 @@ def get_conjunction(jd_start):
                     break
                 # Secant: x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
                 x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
-                f_new = get_diff(x_new)
+                x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
+                f_new = get_diff(x_new, apparent=True) # Full precision for refinement
                 
                 x0, f0 = x1, f1
                 x1, f1 = x_new, f_new
@@ -277,9 +299,9 @@ def find_moonset(jd_sunset, lat, lon, alt_m=10):
     
     OPTIMASI: Reduce iterations + use Secant Method
     """
-    def get_alt(jd):
+    def get_alt(jd, apparent=True):
         dt_sec = get_delta_t(jd)
-        moon_res = elp.calculate_topocentric(jd, lat, lon, alt_obs_m=alt_m, delta_t_sec=dt_sec)
+        moon_res = elp.calculate_topocentric(jd, lat, lon, alt_obs_m=alt_m, delta_t_sec=dt_sec, apparent=apparent)
         # Moon semidiameter ~0.25 + refraction ~0.583 total
         return moon_res['alt_apparent'] + 0.583 
     
@@ -293,7 +315,8 @@ def find_moonset(jd_sunset, lat, lon, alt_m=10):
     
     while curr < high_limit:
         curr += step
-        alt = get_alt(curr)
+        # OPTIMASI: Use apparent=False for scanning
+        alt = get_alt(curr, apparent=False)
         if prev_alt > 0 and alt <= 0:
             # Moonset found! Use Secant Method
             x0 = curr - step
@@ -306,7 +329,8 @@ def find_moonset(jd_sunset, lat, lon, alt_m=10):
                 if abs(f1 - f0) < 1e-10:
                     break
                 x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
-                f_new = get_alt(x_new)
+                x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
+                f_new = get_alt(x_new, apparent=True) # Full precision for refinement
                 x0, f0 = x1, f1
                 x1, f1 = x_new, f_new
                 
@@ -384,104 +408,231 @@ def show_logo():
   |  Website: hisab.tawheed.my.id{Color.RESET}
     """)
 
-def draw_ascii_hilal(data):
-    name = data['month']
-    alt = data['alt']
-    moon_az = data['moon_az']
-    sun_az = data['sun_az']
-    elong = data['elong']
-    age = data['age']
-    status = data['conclusion']
-    greg_date = data['greg_date']
-    sunset_str = data['sunset_time']
-    moonset_str = data['moonset_time']
-    sun_dist = data['sun_dist']
-    moon_dist = data['moon_dist']
-    tz_label = data['tz_label']
-    est_date = data['est_date']
+def draw_ascii_hilal(data_list):
+    # data_list can be a single dict or a list of two dicts (Day 29 and H+1)
+    if isinstance(data_list, dict):
+        data_list = [data_list]
+    
+    is_dual = len(data_list) > 1
+    
+    # Header Info (based on the first day, but we'll show both in plots)
+    data = data_list[0]
     next_m_name = data['month']
+    greg_date = data['greg_date']
+    status = data['conclusion']
+    est_date = data['est_date']
 
-    print(f"\n{Color.BOLD}{Color.MAGENTA}--- VISUALISASI HILAL: {next_m_name.upper()} {greg_date} ---{Color.RESET}")
-    # Colorize status
-    status_col = Color.GREEN if status == "IMKAN RUKYAT" else (Color.YELLOW if "ISTIKMAL" in status else Color.RED)
-    print(f"Status: {status_col}{status}{Color.RESET}")
-    print(f"Alt Hilal: {Color.GREEN}{alt:5.2f}\u00b0{Color.RESET} | Az Moon: {moon_az:6.2f}\u00b0 | Az Sun: {sun_az:6.2f}\u00b0 | Elong: {Color.YELLOW}{elong:5.2f}\u00b0{Color.RESET}")
-    print(f"Ghurub   : {sunset_str} {tz_label} | Moonset: {moonset_str} {tz_label} | Umur: {age:5.2f} jam")
-    print(f"Jarak Matahari: {sun_dist:8.6f} AU | Jarak Bulan: {moon_dist:7.0f} km")
-    print(f"\n{Color.BOLD}KESIMPULAN: 1 {next_m_name} jatuh pada {Color.CYAN}{est_date}{Color.RESET}")
+    print(f"\n{Color.BOLD}{Color.MAGENTA}--- VISUALISASI HILAL (SIDE-BY-SIDE) : {next_m_name.upper()} {greg_date} ---{Color.RESET}")
     
-    if alt < -1:
-        print(f"\n{Color.RED}[ Hilal jauh di bawah ufuk - Tidak terlihat ]{Color.RESET}")
-        return
-
-    # Dimensions
-    rows = 22
-    cols = 31
-    rel_az_start = -15
+    # 1. Prepare Grids for each day
+    grids = []
+    meta_infos = []
     
-    grid = [[" " for _ in range(cols)] for _ in range(rows)]
+    rows = 16 # Reduced from 20 to make it less "tall"
+    cols = 61
+    horizon_row = rows - 3
+    sun_col = cols // 2
     
-    # 1. Horizon line
-    horizon_row = rows - 2
-    for c in range(cols):
-        grid[horizon_row][c] = f"{Color.GRAY}_{Color.RESET}"
-
-    # 2. Mark Sun
-    sun_col = 15 # center
-    if 0 <= sun_col < cols:
-        grid[horizon_row][sun_col] = f"{Color.YELLOW}S{Color.RESET}" # Sunset Point
-
-    # 3. Mark Moon
-    rel_az = moon_az - sun_az
-    if rel_az > 180: rel_az -= 360
-    if rel_az < -180: rel_az += 360
+    # Calculate Dynamic Scaling
+    max_alt = max([d['alt'] for d in data_list])
+    # Standard scale: 1.5 rows per degree
+    # Available sky rows: horizon_row (0 to horizon_row-1) = rows-3
+    available_sky_rows = horizon_row
     
-    moon_col = int(round(sun_col + rel_az))
-    moon_row = horizon_row - int(round(alt * 2)) # 0.5 degrees per row
+    # We want max_alt to fit at row 1 (leaving row 0 for margin)
+    # Target row index = 1
+    # moon_row = horizon_row - (alt * scale)
+    # 1 = horizon_row - (max_alt * scale)
+    # scale = (horizon_row - 1) / max_alt
     
-    is_visible_on_grid = False
-    moon_char = f"{Color.WHITE}{Color.BOLD}({Color.RESET}"
-    if 0 <= moon_row < horizon_row and 0 <= moon_col < cols:
-        grid[moon_row][moon_col] = moon_char # Simple crescent
-        is_visible_on_grid = True
-    elif moon_row == horizon_row and 0 <= moon_col < cols:
-        grid[moon_row][moon_col] = f"{Color.WHITE}C{Color.RESET}" # On horizon
-        is_visible_on_grid = True
-
-    # 4. Print Grid
-    print(f"\n   {Color.GRAY}Alt (\u00b0){Color.RESET}")
-    for r in range(rows - 1):
-        if r % 4 == 0:
-            alt_val = (horizon_row - r) / 2.0
-            label = f"{Color.GRAY}{alt_val:4.1f} |{Color.RESET}"
-        else:
-            label = f"{Color.GRAY}     |{Color.RESET}"
-        
-        row_str = "".join(grid[r])
-        print(f"{label}{row_str}")
-    
-    # X-axis label
-    bottom_line = f"      {Color.GRAY}\u2534" + "\u2500" * (cols - 1) + f"{Color.RESET}"
-    print(bottom_line)
-    
-    # Azimuth labels
-    az_labels = f"      {Color.GRAY}"
-    for i in range(rel_az_start, 16, 5):
-        az_labels += f"{sun_az + i:3.0f}  "
-    az_labels += Color.RESET
-    print(az_labels)
-    print(f"      {Color.GRAY}      (Azimut \u00b0){Color.RESET}")
-
-    if not is_visible_on_grid:
-        if alt < 0:
-            print(f"\n{Color.RED}[ Note: Hilal di bawah horizon ]{Color.RESET}")
-        else:
-            print(f"\n{Color.YELLOW}[ Note: Hilal di luar jangkauan tampilan grid azimut ]{Color.RESET}")
-
-    if status == "IMKAN RUKYAT":
-        print(f"\n{Color.GREEN}{Color.BOLD}>>> Hilal kemungkinan besar terlihat (MABIMS terpenuhi) <<<{Color.RESET}")
+    if max_alt > (available_sky_rows - 1) / 1.5:
+        # If max_alt is too high for standard scale, reduce scale
+        alt_scale = (available_sky_rows - 1) / max_alt
     else:
-        print(f"\n{Color.RED}>>> Hilal sulit/tidak terlihat (MABIMS tidak terpenuhi) <<<{Color.RESET}")
+        alt_scale = 1.5 # Standard
+    
+    for d_idx, d in enumerate(data_list):
+        alt = d['alt']
+        moon_az = d['moon_az']
+        sun_az = d['sun_az']
+        
+        # Sky Gradient
+        sky_colors = []
+        for r in range(horizon_row):
+            p = r / (horizon_row - 1) if horizon_row > 1 else 1.0
+            p_color = p**1.5
+            red = int(20 * (1-p) + 255 * p_color)
+            green = int(20 * (1-p) + 120 * p_color)
+            blue = int(80 * (1-p) + 20 * p_color)
+            sky_colors.append(Color.bg_rgb(red, green, blue))
+
+        grid = [[sky_colors[r] + " " + Color.RESET for c in range(cols)] for r in range(horizon_row)]
+        
+        # Stars
+        import random
+        random.seed(42 + d_idx) # slightly different stars per day
+        for r in range(int(horizon_row * 0.6)):
+            for _ in range(2):
+                c = random.randint(0, cols - 1)
+                if r < horizon_row * 0.4:
+                    star_color = Color.WHITE if random.random() > 0.3 else Color.GRAY
+                    grid[r][c] = sky_colors[r] + star_color + ('.' if random.random() > 0.5 else '*') + Color.RESET
+
+        # Horizon
+        horizon_str = Color.GREEN + "▔" + Color.RESET
+        grid.append([horizon_str for _ in range(cols)])
+        grid.append([Color.GREEN + "░" + Color.RESET for _ in range(cols)])
+        grid.append([Color.GREEN + " " + Color.RESET for _ in range(cols)])
+
+        # Sun
+        if 0 <= sun_col < cols:
+            grid[horizon_row][sun_col] = Color.YELLOW + "●" + Color.RESET
+
+        # Moon
+        rel_az = moon_az - sun_az
+        if rel_az > 180: rel_az -= 360
+        if rel_az < -180: rel_az += 360
+        
+        moon_col = int(round(sun_col + rel_az * 2))
+        moon_row = horizon_row - int(round(alt * alt_scale))
+        
+        moon_char = "☽" if rel_az > 0 else "☾"
+        if alt > -2: # show moon even if slightly below horizon but within grid
+            if 0 <= moon_row < horizon_row and 1 <= moon_col < cols - 1:
+                grid[moon_row][moon_col] = sky_colors[moon_row] + Color.WHITE + Color.BOLD + moon_char + Color.RESET
+            elif moon_row == horizon_row and 1 <= moon_col < cols - 1:
+                 grid[moon_row][moon_col] = Color.WHITE + Color.BOLD + moon_char + Color.RESET
+
+        # Azimuth Labels & Markers
+        labels_row = [" " for _ in range(cols)]
+        marker_row = [" " for _ in range(cols)]
+        min_az = sun_az - 15
+        max_az = sun_az + 15
+        start_mark = math.ceil(min_az / 5.0) * 5
+        for az_val in range(int(start_mark), int(max_az) + 1, 5):
+            c = int(round(sun_col + (az_val - sun_az) * 2))
+            if 0 <= c <= cols - 3:
+                val_str = f"{az_val % 360:3.0f}"
+                for i, char in enumerate(val_str):
+                    if c + i < cols: labels_row[c + i] = char
+        
+        if 0 <= sun_col < cols: marker_row[sun_col] = f"{Color.YELLOW}^{Color.RESET}"
+        if 0 <= moon_col < cols: marker_row[moon_col] = f"{Color.WHITE}{Color.BOLD}^{Color.RESET}"
+
+        grids.append({
+            'main': grid,
+            'labels': "".join(labels_row),
+            'markers': "".join(marker_row),
+            'date': d['greg_date'],
+            'day_lbl': "Hari ke-29" if d_idx == 0 else "H+1 (Hari ke-30)",
+            'alt': d['alt']
+        })
+
+    # 2. Print Side-by-Side
+    spacing = "    "
+    
+    # Sub-headers
+    sub_header = ""
+    for g in grids:
+        lbl = f"({g['day_lbl']}: {g['date']})"
+        sub_header += f"{Color.BOLD}{lbl:^67}{Color.RESET}{spacing}"
+    print(f"\n{sub_header}")
+    
+    # Detailed Info Rows
+    # We need to construct lines that have info for grid 1, spacing, info for grid 2
+    
+    # Extract data for easier access
+    infos = []
+    for d in data_list:
+        status_c = Color.GREEN if d['conclusion'] == "IMKAN RUKYAT" else (Color.YELLOW if "ISTIKMAL" in d['conclusion'] else Color.RED)
+        infos.append({
+            'status_str': f"Status: {status_c}{d['conclusion']}{Color.RESET}",
+            'pos_str': f"Alt: {Color.GREEN}{d['alt']:5.2f}\u00b0{Color.RESET} | Az M: {d['moon_az']:6.2f}\u00b0 | Az S: {d['sun_az']:6.2f}\u00b0",
+            'elong_str': f"Elong: {Color.YELLOW}{d['elong']:5.2f}\u00b0{Color.RESET} | Umur: {d['age']:5.2f} jam",
+            'time_str': f"Ghurub: {d['sunset_time']} | Moonset: {d['moonset_time']} {d['tz_label']}",
+            'dist_str': f"S.Dist: {d['sun_dist']:6.4f} AU | M.Dist: {d['moon_dist']:6.0f} km"
+        })
+        
+    # Print Info Block
+    # Line 1: Status
+    line = ""
+    for info in infos:
+        clean_len = len(info['status_str']) - (len(Color.GREEN) + len(Color.RESET)) # Approx adjustment for ANSI
+        # Manual padding is safer than ljust with ANSI codes
+        # But for simplicity, let's just print left aligned in the 67 char block
+        # We'll rely on the fact the grids are 67 chars wide (cols=61 + 6 prefix)
+        # Actually cols=61, prefix=6 -> 67 chars.
+        
+        # We will just print them left aligned to the block
+        # To align properly with ANSI, it's tricky.
+        # Let's simple print them with enough spaces.
+        pass
+
+    # Better approach: Print lines
+    for key in ['status_str', 'pos_str', 'elong_str', 'time_str', 'dist_str']:
+        line_str = ""
+        for i, info in enumerate(infos):
+            # We need to pad visual length to 67
+            # Strip ansi for calculations
+            text = info[key]
+            # Simple approach: just assume it fits or use fixed spacing if 1 grid
+            if i < len(infos) - 1:
+                # Pad based on visible length? Too complex for quick script.
+                # Let's just use tab or fixed large padding?
+                # The grid is 67 chars wide.
+                # Let's try to align by appending spaces.
+                # Hacky:
+                visible_len = len(text.replace(Color.GREEN, "").replace(Color.YELLOW, "").replace(Color.RED, "").replace(Color.RESET, "").replace(Color.BOLD, "").replace(Color.CYAN, ""))
+                padding = 67 - visible_len
+                line_str += text + " " * padding + spacing
+            else:
+                line_str += text
+        print(line_str)
+
+    print("-" * (67 * len(grids) + 4 * (len(grids)-1)))
+    
+    print(f" Alt | {' '*59} |{spacing} Alt | {' '*59} |")
+    for r in range(rows):
+        line = ""
+        for g_idx, g in enumerate(grids):
+            if r < horizon_row and r % 4 == 0:
+                alt_val = (horizon_row - r) / alt_scale
+                prefix = f"{alt_val:4.1f} | "
+            elif r == horizon_row:
+                prefix = f" 0.0 | "
+            else:
+                prefix = f"     | "
+            
+            line += prefix + "".join(g['main'][r]) + spacing
+        print(line)
+
+    # X-axis
+    x_line = ""
+    for g in grids:
+        x_line += f" Alt | {Color.GRAY}\u2514" + "\u2500" * (cols - 1) + f"{Color.RESET}{spacing}"
+    print(x_line)
+
+    # Azimuth Labels
+    az_line = ""
+    for g in grids:
+        az_line += f"  Az | {g['labels']}{spacing}"
+    print(az_line)
+
+    # Markers
+    mk_line = ""
+    for g in grids:
+        mk_line += f"     | {g['markers']}{spacing}"
+    print(mk_line)
+    
+    print(f"     | {Color.YELLOW}S=Matahari{Color.RESET}  {Color.WHITE}{Color.BOLD}M=Bulan{Color.RESET}             {spacing}     | {Color.YELLOW}S=Matahari{Color.RESET}  {Color.WHITE}{Color.BOLD}M=Bulan{Color.RESET}")
+
+    # Final Summary
+    print(f"\n{Color.BOLD}KESIMPULAN: 1 {next_m_name} jatuh pada {Color.CYAN}{est_date}{Color.RESET}")
+    if status == "IMKAN RUKYAT":
+        print(f"{Color.GREEN}{Color.BOLD}>>> HASIL: Hilal TERLIHAT pada Hari ke-29 (MABIMS terpenuhi) <<<{Color.RESET}")
+    else:
+        print(f"{Color.RED}{Color.BOLD}>>> HASIL: Hilal TIDAK TERLIHAT pada Hari ke-29 -> ISTIKMAL <<<{Color.RESET}")
+        print(f"{Color.RED}{Color.BOLD}>>> 1 {next_m_name} jatuh pada hari berikutnya (H+1) <<<{Color.RESET}")
 
 def run_hisab(hijri_year, lat, lon, alt_m, location_name, province_name=""):
     tz_offset, tz_label = get_political_tz(province_name, lon)
@@ -489,10 +640,10 @@ def run_hisab(hijri_year, lat, lon, alt_m, location_name, province_name=""):
     print(f"\n{Color.BLUE}{Color.BOLD}===== HISAB AWAL BULAN {hijri_year} H ({location_name.upper()}) ====={Color.RESET}")
     print(f"Kriteria MABIMS: {Color.GREEN}Alt >= 3\u00b0{Color.RESET}, {Color.YELLOW}Elong >= 6.4\u00b0{Color.RESET} | Lat: {lat:.4f}, Lon: {lon:.4f}, Alt: {alt_m}m")
     print(f"Zona Waktu: {Color.CYAN}{tz_label}{Color.RESET} (UTC+{tz_offset})")
-    print(f"{Color.GRAY}" + "-" * 150 + f"{Color.RESET}")
-    header = f"{'No':<2} | {'Bulan':<15} | {f'Ijtima ({tz_label})':<16} | {f'Ghurub ({tz_label})':<16} | {'Umur':<10} | {'Alt':<7} | {'Elong':<7} | {'Status':<15} | {'Kesimpulan'}"
+    print(f"{Color.GRAY}" + "-" * 155 + f"{Color.RESET}")
+    header = f"{'No':<2} | {'Bulan':<15} | {f'Ijtima ({tz_label})':<19} | {f'Ghurub ({tz_label})':<19} | {'Umur':<10} | {'Alt':<7} | {'Elong':<7} | {'Status':<15} | {'Kesimpulan'}"
     print(f"{Color.BOLD}{header}{Color.RESET}")
-    print(f"{Color.GRAY}" + "-" * 150 + f"{Color.RESET}")
+    print(f"{Color.GRAY}" + "-" * 155 + f"{Color.RESET}")
     
     monthly_results = []
 
@@ -503,8 +654,17 @@ def run_hisab(hijri_year, lat, lon, alt_m, location_name, province_name=""):
         # Time part in local TZ
         jd_local = jd_target_sunset + tz_offset/24.0
         f_local = (jd_local + 0.5 - math.floor(jd_local + 0.5)) * 24.0
-        h_local, m_local = int(f_local), int((f_local - int(f_local)) * 60)
-        sunset_str = f"{jdn_to_historical_str(jdn_sunset, False)} {h_local:02d}:{m_local:02d}"
+        h_local = int(f_local)
+        m_local = int((f_local - h_local) * 60)
+        s_local = int(round(((f_local - h_local) * 60 - m_local) * 60))
+        if s_local == 60:
+            m_local += 1
+            s_local = 0
+        if m_local == 60:
+            h_local += 1
+            m_local = 0
+            
+        sunset_str = f"{jdn_to_historical_str(jdn_sunset, False)} {h_local:02d}:{m_local:02d}:{s_local:02d}"
 
         age_hours = (jd_target_sunset - jd_conj) * 24.0
         ijtima_after_sunset = (jd_conj > jd_target_sunset)
@@ -537,7 +697,7 @@ def run_hisab(hijri_year, lat, lon, alt_m, location_name, province_name=""):
         # Number or H+1
         lbl_num = f"{month_idx+1:2}" if "(H+1)" not in label_prefix else "  "
         
-        row = (f"{lbl_num} | {label_prefix:<15} | {ijtima_str:<16} | {sunset_str:<16} | "
+        row = (f"{lbl_num} | {label_prefix:<15} | {ijtima_str:<19} | {sunset_str:<19} | "
                f"{age_hours:<8.2f} j | {c_alt}{moon_res['alt_apparent']:<6.2f}\u00b0{Color.RESET} | "
                f"{c_elong}{elong:<6.2f}\u00b0{Color.RESET} | {status:<15} | {c_conclusion}{Color.BOLD}{conclusion}{Color.RESET}")
         print(row)
@@ -556,7 +716,7 @@ def run_hisab(hijri_year, lat, lon, alt_m, location_name, province_name=""):
             else:
                 ms_str = "--:--"
 
-            monthly_results.append({
+            res_data = {
                 'month': HIJRI_MONTH_NAMES[month_idx],
                 'greg_date': jdn_to_historical_str(jdn_sunset),
                 'alt': moon_res['alt_apparent'],
@@ -571,9 +731,40 @@ def run_hisab(hijri_year, lat, lon, alt_m, location_name, province_name=""):
                 'elong': elong,
                 'age': age_hours,
                 'conclusion': conclusion
-            })
+            }
+            monthly_results.append(res_data)
+            return trigger_h1, res_data
             
-        return trigger_h1
+        else:
+            # Data for H+1
+            # For Day 30 (H+1), the next day is ALWAYS 1st of month
+            est_jdn_h1 = jdn_sunset + 1
+            est_date_str_h1 = jdn_to_historical_str(est_jdn_h1)
+            
+            jd_moonset = find_moonset(jd_target_sunset, lat, lon, alt_m)
+            if jd_moonset:
+                jd_ms_local = jd_moonset + tz_offset/24.0
+                f_ms = (jd_ms_local + 0.5 - math.floor(jd_ms_local + 0.5)) * 24.0
+                ms_str = f"{int(f_ms):02d}:{int((f_ms-int(f_ms))*60):02d}"
+            else:
+                ms_str = "--:--"
+
+            return trigger_h1, {
+                'month': HIJRI_MONTH_NAMES[month_idx],
+                'greg_date': jdn_to_historical_str(jdn_sunset),
+                'alt': moon_res['alt_apparent'],
+                'moon_az': moon_res['az_deg'],
+                'sun_az': topo_sun['azimuth'],
+                'sunset_time': f"{h_local:02d}:{m_local:02d}",
+                'moonset_time': ms_str,
+                'tz_label': tz_label,
+                'est_date': est_date_str_h1,
+                'sun_dist': sun_pos['range'],
+                'moon_dist': moon_geo['dist_km'],
+                'elong': elong,
+                'age': age_hours,
+                'conclusion': conclusion
+            }
 
     for m in range(1, 13):
         # Anchor on Day 29 of previous month
@@ -593,12 +784,15 @@ def run_hisab(hijri_year, lat, lon, alt_m, location_name, province_name=""):
 
         # Night 1: The day of Ijtima
         jd_sunset_1 = find_sunset(jd_ijtima, lat, lon, alt_m, tz_offset)
-        is_late = calculate_night(jd_sunset_1, jd_ijtima, ijtima_str, HIJRI_MONTH_NAMES[m-1], m-1)
+        is_late, data_29 = calculate_night(jd_sunset_1, jd_ijtima, ijtima_str, HIJRI_MONTH_NAMES[m-1], m-1)
         
         # If Ijtima was after sunset, check the next night too
         if is_late:
             jd_sunset_2 = jd_sunset_1 + 1.0
-            calculate_night(jd_sunset_2, jd_ijtima, ijtima_str, f"  (H+1)", m-1)
+            _, data_h1 = calculate_night(jd_sunset_2, jd_ijtima, ijtima_str, f"  (H+1)", m-1)
+            # Store data for side-by-side viz
+            if data_29:
+                data_29['h1_data'] = data_h1
             
         print() # Line break for readability
     
@@ -697,7 +891,11 @@ def main():
                 try:
                     m_idx = int(viz_choice) - 1
                     if 0 <= m_idx < len(results):
-                        draw_ascii_hilal(results[m_idx])
+                        res = results[m_idx]
+                        if 'h1_data' in res:
+                            draw_ascii_hilal([res, res['h1_data']])
+                        else:
+                            draw_ascii_hilal(res)
                     else:
                         print("Nomor bulan tidak valid (1-12).")
                 except ValueError:

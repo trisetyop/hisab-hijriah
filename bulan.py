@@ -425,7 +425,7 @@ class ELP2000_Moon:
                 raw = self._reparse_pert_blocks(fpath)
                 self.pert_series[iv] = self._process_pert_series_with_it(raw)
 
-    def calculate(self, jd_tdb):
+    def calculate(self, jd_tdb, apparent=False):
         """
         Calculates Geocentric Position (X,Y,Z) and (Lon, Lat, Dist).
         jd_tdb: Julian Date (TDB scale theoretically, but usually close to TT/ET)
@@ -434,7 +434,8 @@ class ELP2000_Moon:
         JD dibulatkan ke 1 menit untuk cache hit yang lebih baik.
         """
         # Cache key: JD dibulatkan ke 1 menit (1440 menit per hari)
-        cache_key = round(jd_tdb * 1440)
+        # Menambahkan flag 'apparent' ke cache key
+        cache_key = (round(jd_tdb * 1440), apparent)
         
         if cache_key in self._result_cache:
             return self._result_cache[cache_key]
@@ -502,6 +503,16 @@ class ELP2000_Moon:
         # Precession in latitude is much smaller and often neglected in this scale 
         # (around 0.01" over decades).
         
+        if apparent:
+            try:
+                from matahari import EarthRotation
+                d_psi, _ = EarthRotation.get_nutation(jd_tdb)
+                # Aberrasi Bulan sekitar -0.7" (konstan di bujur)
+                aber_moon = -0.7 / 3600.0
+                lon_rad += math.radians(d_psi + aber_moon)
+            except ImportError:
+                pass
+
         # Normalize Lon
         lon_rad = lon_rad % self.DPI
         
@@ -554,7 +565,7 @@ class ELP2000_Moon:
 
         return ra_rad, dec_rad
 
-    def calculate_topocentric(self, jd_ut, lat_obs_deg, lon_obs_deg, alt_obs_m=0.0, pressure=1010, temp_c=10, delta_t_sec=0.0):
+    def calculate_topocentric(self, jd_ut, lat_obs_deg, lon_obs_deg, alt_obs_m=0.0, pressure=1010, temp_c=10, delta_t_sec=0.0, apparent=True):
         """
         Calculates Topocentric Equatorial Position (RA', Dec', Dist').
         Includes Parallax correction.
@@ -565,36 +576,30 @@ class ELP2000_Moon:
         - jd_ut: Julian Day (UT1) untuk rotasi bumi (GMST).
         - delta_t_sec: TD - UT dalam detik (untuk Ephemeris Bulan). 
                        Default 0.0 jika tidak diketahui (mengurangi akurasi ~1').
+        - apparent: Jika True, hitung nutasi dan aberasi (lambat tapi akurat). 
+                    Jika False, abaikan nutasi (cepat, untuk scanning awal).
         """
         
         # JD TDB for Ephemeris (Moon Position) & Nutation
         jd_tdb = jd_ut + (delta_t_sec / 86400.0)
 
         # 1. Geocentric Position (Ecliptic)
-        geo = self.calculate(jd_tdb) 
+        # Use apparent=apparent here too if we want fully consistent "True/Mean" toggle
+        # But calculate() apparent flag does nutation on ecliptic lon.
+        # Here we do nutation on equatorial conversion usually.
+        # Let's align them.
+        geo = self.calculate(jd_tdb, apparent=apparent) 
         
         
         # --- NUTATION & ABERRATION ---
-        # Reimplement logic or import? Better to import if we trust relative path.
-        # But user wants standalone bulan.py? 
-        # For robustness, let's implement simplified Nutation here or assume user has updated matahari.py.
-        # Let's assume standalone capability is preferred if verify scripts typically import both.
-        # Trying import first.
-        
-        try:
-            from matahari import EarthRotation
-            d_psi, d_eps = EarthRotation.get_nutation(jd_tdb)
-            # Aberration (Planetary) - Moon is close so -20.6" formula for sun is WRONG for Moon.
-            # Moon Light time ~1.3s. Motion ~0.55 arcsec/sec.
-            # Correction ~ -0.7 arcsec.
-            # Constant approx: -0.70" in Longitude?
-            # Or simplified: use geometric. Moon aberration is small.
-            # Sun Aberration: -20.4898 / Dist_AU.
-            # Let's skip Moon Aberration for now or apply constant -0.0002 deg? 
-            # Nutation is the big one (up to 17").
-        except ImportError:
-            # Fallback if matahari.py not found/updated
-            d_psi, d_eps = 0.0, 0.0
+        d_psi, d_eps = 0.0, 0.0
+        if apparent:
+            try:
+                from matahari import EarthRotation
+                d_psi, d_eps = EarthRotation.get_nutation(jd_tdb)
+                # Aberration (Planetary) skipped as per original logic comment
+            except ImportError:
+                pass
 
         # Ensure functions using time for Space positions use jd_tdb
         # Functions using time for Earth Rotation use jd_ut
