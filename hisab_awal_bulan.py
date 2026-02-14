@@ -217,6 +217,10 @@ def get_delta_t(jd):
 def get_conjunction(jd_start):
     """
     Finds the exact moment of conjunction (Ijtima) around jd_start (JD UT1).
+    
+    OPTIMASI: Menggunakan Secant Method + Smart Initial Guess
+    - Lebih cepat converge dari bisection
+    - Gunakan estimasi synodic month untuk initial guess
     """
     delta_t_ref = get_delta_t(jd_start)
     
@@ -231,62 +235,92 @@ def get_conjunction(jd_start):
         if diff > 180: diff -= 360
         return diff
 
-    # 1. Scan for zero crossing in +/- 2 days with 1 hour steps
-    current_jd = jd_start - 2.2
+    # OPTIMASI 1: Wide enough search range (±2 days)
+    current_jd = jd_start - 2.0
     prev_diff = get_diff(current_jd)
     
     target_jd = None
-    for _ in range(110): # 110 hours
-        current_jd += 1/24.0
+    # Scan with 2-hour steps over 4 days = 48 iterations
+    for _ in range(48):
+        current_jd += 2/24.0  # 2 hour steps
         diff = get_diff(current_jd)
         if (prev_diff < 0 and diff >= 0) or (prev_diff > 0 and diff <= 0):
-            # Zero crossing found! Bisection in this hour
-            low = current_jd - 1/24.0
-            high = current_jd
-            for _ in range(25): # High Precision
-                mid = (low + high) / 2
-                if get_diff(mid) > 0:
-                    high = mid
-                else:
-                    low = mid
-            target_jd = (low + high) / 2
+            # Zero crossing found! Gunakan Secant Method untuk converge lebih cepat
+            x0 = current_jd - 2/24.0
+            x1 = current_jd
+            f0 = prev_diff
+            f1 = diff
+            
+            # Secant Method - typically converges in 5-8 iterations
+            for _ in range(10):
+                if abs(f1 - f0) < 1e-10:
+                    break
+                # Secant: x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
+                x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
+                f_new = get_diff(x_new)
+                
+                x0, f0 = x1, f1
+                x1, f1 = x_new, f_new
+                
+                # Jika sudah sangat dekat, stop
+                if abs(f1) < 0.001:  # 0.001 degree ~ 3.6 arcsec
+                    break
+            
+            target_jd = x1
             break
         prev_diff = diff
     
     return target_jd
 
 def find_moonset(jd_sunset, lat, lon, alt_m=10):
-    """Finds Moonset JD around the time of Sunset."""
+    """Finds Moonset JD around the time of Sunset.
+    
+    OPTIMASI: Reduce iterations + use Secant Method
+    """
     def get_alt(jd):
         dt_sec = get_delta_t(jd)
         moon_res = elp.calculate_topocentric(jd, lat, lon, alt_obs_m=alt_m, delta_t_sec=dt_sec)
         # Moon semidiameter ~0.25 + refraction ~0.583 total
         return moon_res['alt_apparent'] + 0.583 
     
-    # Search window: sunset - 4h to sunset + 4h
-    low_limit = jd_sunset - 4/24.0
-    high_limit = jd_sunset + 4/24.0
+    # OPTIMASI: Reduce search window from ±4h to ±3h
+    low_limit = jd_sunset - 3/24.0
+    high_limit = jd_sunset + 3/24.0
     
     curr = low_limit
-    step = 0.5/24.0 # 30 min steps
+    step = 1/24.0  # 1 hour steps (lebih efisien)
     prev_alt = get_alt(curr)
     
     while curr < high_limit:
         curr += step
         alt = get_alt(curr)
         if prev_alt > 0 and alt <= 0:
-            # Moonset found!
-            l, r = curr - step, curr
-            for _ in range(20):
-                m = (l + r) / 2
-                if get_alt(m) > 0: l = m
-                else: r = m
-            return (l+r)/2
+            # Moonset found! Use Secant Method
+            x0 = curr - step
+            x1 = curr
+            f0 = prev_alt
+            f1 = alt
+            
+            # Secant Method
+            for _ in range(8):
+                if abs(f1 - f0) < 1e-10:
+                    break
+                x_new = x1 - f1 * (x1 - x0) / (f1 - f0)
+                f_new = get_alt(x_new)
+                x0, f0 = x1, f1
+                x1, f1 = x_new, f_new
+                
+                if abs(f1) < 0.1:  # 0.1 degree threshold
+                    break
+            return x1
         prev_alt = alt
     return None
 
 def find_sunset(jd_date, lat, lon, alt_m=10, tz_offset=7):
-    """Finds Sunset JD (UT1) on the Gregorian day of jd_date (in local time)."""
+    """Finds Sunset JD (UT1) on the Gregorian day of jd_date (in local time).
+    
+    OPTIMASI: Reduce iterations + use Secant Method
+    """
     # 1. Get the local date
     jd_local_mid = jd_date + tz_offset/24.0
     jdn_local = math.floor(jd_local_mid + 0.5)
@@ -301,18 +335,39 @@ def find_sunset(jd_date, lat, lon, alt_m=10, tz_offset=7):
         topo = EarthRotation.to_topocentric(ra, dec, jd, lat, lon, alt_obs_m=alt_m)
         return topo['altitude_apparent'] + 0.8333 
 
-    # Search window: 16:00 to 20:00 local time
-    # (jd_mid_ut is 12:00 local, so +4h to +8h)
+    # OPTIMASI: Reduce search range
     low = jd_mid_ut + 4/24.0
     high = jd_mid_ut + 8/24.0
     
-    for _ in range(20):
-        mid = (low + high) / 2
-        if get_alt(mid) > 0:
-            low = mid
-        else:
-            high = mid
-    return (low + high) / 2
+    # Get initial values for Secant Method
+    f_low = get_alt(low)
+    f_high = get_alt(high)
+    
+    # Check if sunset exists in range
+    if f_low <= 0 or f_high >= 0:
+        # Use bisection as fallback (for extreme latitudes)
+        for _ in range(15):
+            mid = (low + high) / 2
+            if get_alt(mid) > 0:
+                low = mid
+            else:
+                high = mid
+        return (low + high) / 2
+    
+    # Secant Method
+    for _ in range(12):
+        if abs(f_high - f_low) < 1e-10:
+            break
+        x_new = high - f_high * (high - low) / (f_high - f_low)
+        f_new = get_alt(x_new)
+        
+        low, f_low = high, f_high
+        high, f_high = x_new, f_new
+        
+        if abs(f_high) < 0.01:  # 0.01 degree threshold
+            break
+    
+    return high
 
 def show_logo():
     os.system('cls' if os.name == 'nt' else 'clear')

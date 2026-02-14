@@ -1,5 +1,7 @@
 import urllib.request
 import os
+import math
+from functools import lru_cache
 
 file_url = "https://ftp.imcce.fr/pub/ephem/planets/vsop87/VSOP87D.ear"
 file_name = "VSOP87D.ear"
@@ -9,18 +11,20 @@ if not os.path.exists(file_name):
     urllib.request.urlretrieve(file_url, file_name)
     print("Download selesai.")
 
-import math
-import os
-
 class VSOP87D_Sun:
     """
     Parser khusus VSOP87D untuk menghitung posisi Matahari Geosentrik
     berdasarkan data Helioselektrik Bumi (VSOP87D.ear).
+    
+    OPTIMASI: Menggunakan caching untuk menyimpan data file yang sudah di-parse.
     """
 
     DPI = 2.0 * math.pi
     T2000 = 2451545.0
     A1000 = 365250.0
+    
+    # ========== CACHE UNTUK DATA FILE VSOP87D ==========
+    _vsop_cache = {}  # Cache untuk data file yang sudah di-parse
 
     @classmethod
     def get_sun_position(cls, filepath, jd, prec=0.0):
@@ -57,28 +61,31 @@ class VSOP87D_Sun:
         }
 
     @classmethod
-    def _compute_vsop87d(cls, filepath, tdj, ivers, body_name, prec):
-        """Internal parser untuk membaca file VSOP87D."""
+    def _parse_vsop87_file(cls, filepath, ivers, body_name):
+        """
+        Parsing file VSOP87D dan simpan ke cache.
+        Setiap file hanya di-parse SEKALI saja.
+        """
+        cache_key = (filepath, ivers, body_name)
+        
+        # Jika sudah ada di cache, return yang sudah di-cache
+        if cache_key in cls._vsop_cache:
+            return cls._vsop_cache[cache_key]
+        
         if not os.path.exists(filepath):
             raise FileNotFoundError(f"File data tidak ditemukan: {filepath}")
-
-        # Hitung T (millennia dari J2000.0)
-        t_powers = [1.0] * 7
-        t_powers[1] = (tdj - cls.T2000) / cls.A1000
-        for i in range(2, 7):
-            t_powers[i] = t_powers[1] * t_powers[i-1]
-
-        r = [0.0] * 6
-        q_val = max(3.0, -math.log10(prec + 1e-50)) if prec > 0 else 20.0
-
+        
+        # Parse file dan simpan ke list
+        terms = []  # List of (ic, it, a, b, c)
+        
         with open(filepath, 'r') as f:
             lines = f.readlines()
-
+        
         idx = 0
         while idx < len(lines):
             line = lines[idx]
             if len(line) < 67: break
-
+            
             # Header format
             iv = int(line[17:18])
             bo = line[22:29].strip()
@@ -86,27 +93,52 @@ class VSOP87D_Sun:
             it = int(line[59:60])
             n_terms = int(line[60:67])
             idx += 1
-
+            
             # Skip jika bukan Bumi atau versi D
             if iv != ivers or bo != body_name:
                 idx += n_terms
                 continue
-
-            # Truncation logic (opsional berdasarkan presisi)
-            # Untuk Ilmu Falak biasanya kita ambil semua data (prec=0)
-
+            
+            # Parse semua terms
             for _ in range(n_terms):
                 term_line = lines[idx]
                 idx += 1
-
+                
                 a = float(term_line[79:97])
                 b = float(term_line[97:111])
                 c = float(term_line[111:131])
-
-                # Evaluasi A * cos(B + C*T) * T^k
-                u = b + c * t_powers[1]
-                r[ic - 1] += a * math.cos(u) * t_powers[it]
-
+                
+                terms.append((ic, it, a, b, c))
+        
+        # Simpan ke cache
+        cls._vsop_cache[cache_key] = terms
+        print(f"[CACHE] VSOP87D data loaded: {len(terms)} terms for {body_name}")
+        
+        return terms
+    
+    @classmethod
+    def _compute_vsop87d(cls, filepath, tdj, ivers, body_name, prec):
+        """
+        Internal parser untuk membaca file VSOP87D.
+        OPTIMASI: Menggunakan data dari cache, tidak perlu parsing ulang.
+        """
+        # Ambil data dari cache (otomatis di-parse jika belum ada)
+        terms = cls._parse_vsop87_file(filepath, ivers, body_name)
+        
+        # Hitung T (millennia dari J2000.0)
+        t_powers = [1.0] * 7
+        t_powers[1] = (tdj - cls.T2000) / cls.A1000
+        for i in range(2, 7):
+            t_powers[i] = t_powers[1] * t_powers[i-1]
+        
+        r = [0.0] * 6
+        
+        # Hitung menggunakan data dari cache
+        for ic, it, a, b, c in terms:
+            # Evaluasi A * cos(B + C*T) * T^k
+            u = b + c * t_powers[1]
+            r[ic - 1] += a * math.cos(u) * t_powers[it]
+        
         return r
 
 def julian_now():

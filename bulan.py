@@ -1,10 +1,13 @@
 import math
 import os
+from functools import lru_cache
 
 class ELP2000_Moon:
     """
     Parser dan Kalkulator untuk ELP 2000-82 Lunar Theory (Chapront-Touze & Chapront, 1983).
     Mengadaptasi logika dari ELPMPP02.for.
+    
+    OPTIMASI: Menggunakan LRU cache untuk hasil perhitungan posisi bulan.
     """
     
     # Constants
@@ -17,6 +20,9 @@ class ELP2000_Moon:
     SC = 36525.0
     A405 = 384747.9613701725
     AELP = 384747.980674318
+    
+    # ========== CACHE UNTUK HASIL PERHITUNGAN ==========
+    _result_cache = {}  # Cache untuk hasil calculate()
     
     def __init__(self, data_dir=""):
         self.data_dir = data_dir
@@ -423,7 +429,16 @@ class ELP2000_Moon:
         """
         Calculates Geocentric Position (X,Y,Z) and (Lon, Lat, Dist).
         jd_tdb: Julian Date (TDB scale theoretically, but usually close to TT/ET)
+        
+        OPTIMASI: Menggunakan caching untuk hasil perhitungan.
+        JD dibulatkan ke 1 menit untuk cache hit yang lebih baik.
         """
+        # Cache key: JD dibulatkan ke 1 menit (1440 menit per hari)
+        cache_key = round(jd_tdb * 1440)
+        
+        if cache_key in self._result_cache:
+            return self._result_cache[cache_key]
+        
         if self.main_series[1] is None:
             self.load_all_series()
             
@@ -490,13 +505,19 @@ class ELP2000_Moon:
         # Normalize Lon
         lon_rad = lon_rad % self.DPI
         
-        return {
+        result = {
             'lon_rad': lon_rad,
             'lat_rad': lat_rad,
             'dist_km': dist_km,
             'lon_deg': math.degrees(lon_rad),
             'lat_deg': math.degrees(lat_rad)
         }
+        
+        # Simpan ke cache (dengan batas cache size untuk mencegah memory leak)
+        if len(self._result_cache) < 10000:  # Batas cache size
+            self._result_cache[cache_key] = result
+        
+        return result
 
     # --- TOPOCENTRIC ADDITIONS ---
 
